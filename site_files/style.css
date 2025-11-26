@@ -206,14 +206,14 @@ between the sidebars! */
 
 #main-grid {
     display:grid;
-    grid-template-columns: 0.5fr 1fr auto auto auto;
-    grid-template-rows: 25% auto auto auto auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
 }
 
 #box1 {
     order: 1;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 2;
     grid-row-start: 1;
 }
 
@@ -228,7 +228,8 @@ between the sidebars! */
     order: 3;
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row-start:2;
+    grid-row-start:1;
+    grid-row-end: 3;
 }
 
 #newsletter-form {
