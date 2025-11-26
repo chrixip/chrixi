@@ -38,11 +38,24 @@
 /*Applies to all elements*/
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    height:100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body > * {
+    flex-shrink: 1;
 }
 
 /*Sets the borders &  background on the divs that hold content */
 .div-bg {
-    border: 6px ridge #bb3d3d;
+    border: 6px ridge #91581C;
     border-radius: 9px;
     overflow:auto;
     background-image: var(--div-bg-img);
@@ -61,7 +74,7 @@ body {
 -----THIS SECTION DEFINES THE CONTAINER GRID-----
 ================================================*/
 .container {
-    max-width: 900px;
+    max-width: 1200px;
     height: 93vh;
     display: grid;
     border: 9px ridge var(--content-color);
@@ -109,23 +122,26 @@ body {
 }
 
 /*===============================================
------THIS SECTION DEFINES THE CONTAINER GRID-----
+------THIS SECTION ENDS THE CONTAINER GRID------
 ================================================*/
 
 #footer {
     text-align: center;
-    position: relative;
     bottom: 0;
     width: 100%;
+    flex-grow: 1;
     background-color: #6B3F23;
 }
 
 #footer p {
-    margin:0;
+    margin-top:0;
+    margin-bottom: 10px;
 }
 
 #footer-divider {
     border:0;
+    margin-top:10px;
+    margin-bottom:10px;
     height: 30px;
     width: 100%;
     background-image: url("assets/train_divider.gif");
@@ -174,57 +190,6 @@ you can add them directly to the <div id="header"></div> element! */
         radial-gradient(20px,#000 calc(100%-1px),#0000) bottom/37px 40px */
 }
 
-/* navigation section!! 
-#navbar {
-    height: 40px;
-    flex: 1;
-}
-
-#navbar ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    justify-content: space-evenly;
-}
-
-#navbar li {
-    padding-top: 10px;
-}
-
-/* navigation links
-#navbar li a {
-    color: var(--content-color);
-    font-weight: 800;
-    text-decoration: none;
-    text-shadow: 
-        -1px -1px 1px rgba(255,255,255,.1), 
-        1px 1px 1px rgba(0,0,0,.5), 
-        4px 4px 5px #070F05;
-    /* this removes the underline 
-}
-
-/* navigation link when a link is hovered over 
-#navbar li a:hover {
-    color: #a49cba;
-    text-decoration: underline;
-}
-
-#flex {
-    display: flex;
-}
-
-/* this colors BOTH sidebars
-if you want to style them separately,
-create styles for #leftSidebar and #rightSidebar */
-aside {
-    background-color: var(--content-bg);
-    width: 200px;
-    padding: 20px;
-    font-size: smaller;
-    /* this makes the sidebar text slightly smaller */
-}
-
 
 /* this is the color of the main content area,
 between the sidebars! */
@@ -235,18 +200,48 @@ main {
     order: 2;
 }
 
-/* what's this "order" stuff about??
-allow me to explain!
-if you're using both sidebars, the "order" value
-tells the CSS the order in which to display them.
-left sidebar is 1, content is 2, and right sidebar is 3! */
+/*Settings for the sidebars */
 
-*/ #leftSidebar {
-    order: 1;
+.sidebar-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
-#rightSidebar {
-    order: 3;
+.buttons {
+    text-align:center;
+    background:#ffc6ee;
+    padding:9px;
+    width: 75%;
+    border:2px outset #ffc6ee;
+    border-radius:10px;
+    margin:0 0 5px 0;
+    place-self: center;
+}
+
+.buttons:hover {
+    border:2px inset #ffc6ee;
+}
+
+.buttons a {
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    text-shadow: -2px 0 #ffafe7, 0 2px #ffafe7, 2px 0 #ffafe7, 0 -2px #ffafe7;
+}
+
+.linkbutton-1 {
+    margin-top: 10px;
+}
+
+#nav-buttons {
+    padding: 10px;
+    margin: 10px;
+    border: 3px outset #2f3f2e;
+}
+
+.section {
+    background-color:#bdc0bd;
 }
 
 h1,
@@ -281,7 +276,7 @@ and then subtrack it by 100. use this new number as the
 "max-width" value below
 */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1100px) {
     #flex {
         flex-wrap: wrap;
     }
@@ -294,20 +289,22 @@ and then subtrack it by 100. use this new number as the
 since the sidebars would be too small on a mobile device.
 feel free to play around with the order!
 */
-    main {
-        order: 1;
+    .container {
+        grid-template-rows: auto auto auto 5fr auto;
+        grid-template-columns:100%;
+    }
+    .main {
+        grid-column-start: 1;
+        grid-row-start: 4;
     }
 
-    #leftSidebar {
-        order: 2;
+    #sidebar1 {
+        grid-column-start: 1;
+        grid-row-start: 3;
     }
 
-    #rightSidebar {
-        order: 3;
-    }
-
-    #navbar ul {
-        flex-wrap: wrap;
+    #header-img {
+        object-fit: contain;
     }
 }
 

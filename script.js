@@ -156,17 +156,6 @@ if ( url.includes("posts/") ) {
   relativePath = "..";
 }
 
-//Generate the Nav HTML, a series of list items containing links.
-let navHTML = '<ul> <li><a href="' + relativePath + '/index.html">Home</a></li>' +
-'<li><a href="' + relativePath + '/feed.html">Blog</a></li>' +
-'<li><a href="' + relativePath + '/archive.html">Archive</a></li>' +
-'<li><a href="' + relativePath + '/about.html">About</a></li>' +
-'<li><a href="' + relativePath + '/links.html">Interesting Links</a></li> </ul>';
-
-//Generate the Footer HTML, which uses the variables defined in the BASIC INFO section above to list info about the site.
-//Note: feel free to remove the references to Zonelets and Neocities! Just be careful not to delete any necessary HTML closing tags or other syntax.
-let footerHTML = '<hr id="footer_hr"><p>' + blogName + " is written by <a href='" + authorLink + "'>" + authorName + "</a>, built with <a href='https://zonelets.net/'>Zonelets</a>, and hosted by <a href='https://neocities.org/'>Neocities!</a></p>";
-
 //To do the following stuff, we want to know where we are in the posts array (if we're currently on a post page).
 let currentIndex = -1;
 let currentFilename = url.substring(url.lastIndexOf('posts/'));

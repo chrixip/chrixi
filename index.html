@@ -17,14 +17,14 @@
                 </div>
             </div>
                 <div id="header-divider"></div>
-            <div id="sidebar1" class="div-bg">
-                <select onchange='location=this.options[this.selectedIndex].value;' id="navMenu" style='width:160px;font-size:1em;background:white;padding:4px;border:1px solid #000;border-radius: 5px;color: #000;margin-top: 0px;'>
-                        <option value="https://chrixi.neocities.org/index.html">Home</option>
-                        <option value="https://chrixi.neocities.org/feed.html">Blog</option>
-                        <option value="https://chrixi.neocities.org/archive.html">Archive</option>
-                        <option value="https://chrixi.neocities.org/about.html">About</option>
-                        <option value="https://chrixi.neocities.org/links.html">Links</option>
-                </select>
+            <div id="sidebar1" class="div-bg sidebar-grid">
+                <div id="nav-buttons" class="section">
+                    <div class="linkbutton-1 buttons"><a href="https://chrixi.neocities.org/index.html">Home</a></div>
+                    <div class="linkbutton-2 buttons"><a href="https://chrixi.neocities.org/feed.html">Blog</a></div>
+                    <div class="linkbutton-3 buttons"><a href="https://chrixi.neocities.org/archive.html">Archive</a></div>
+                    <div class="linkbutton-4 buttons"><a href="https://chrixi.neocities.org/about.html">About</a></div>
+                    <div class="linkbutton-5 buttons"><a href="https://chrixi.neocities.org/links.html">Links</a></div>
+                </div>
             </div>
             <div id="main-div" class = "main div-bg">
                 <main id="main" class="content">
@@ -51,10 +51,11 @@
             </div>
         </div>
 
-        <div id="footer-divider"></div>
+        
 
         <div id="footer">
-                <footer class="footer" style="margin-bottom: 10px;">
+                <div id="footer-divider"></div>
+                <footer class="footer">
                     <p><a href="chrixi.neocities.org/feed.html">chrixi's weekly roundup</a> is built with <a href='https://zonelets.net/'>Zonelets</a>, and hosted by <a href='https://neocities.org/'>Neocities!</a></p>
                 </footer>
         </div>
