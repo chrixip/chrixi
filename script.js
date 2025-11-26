@@ -317,9 +317,9 @@ if (document.getElementById("postTitleH1")) {
 if (document.getElementById("postDate")) {
   document.getElementById("postDate").innerHTML = niceDate;
 }
-if (document.getElementById("footer")) {
+/*if (document.getElementById("footer")) {
   document.getElementById("footer").innerHTML = footerHTML;
-}
+}*/
 
 //Dynamically set the HTML <title> tag from the postTitle variable we created earlier
 //The <title> tag content is what shows up on browser tabs

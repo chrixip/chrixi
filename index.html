@@ -9,24 +9,14 @@
 		<link rel = "stylesheet" type = "text/css" href = "style.css" />
         <link href="./feed.xml" rel="alternate" type="application/rss+xml" title="chrixi's weekly roundup">
 	</head>
-	<body>
+	<body class="crt">
 
-		<div id="container" class="crt">
-            
-            <!--<div id="topBar">
-                <marquee width = 100%>
-                    welcome to my website
-                </marquee>
-            </div>-->
-            <div id="headerArea">
-                <div id="header"></div>
-                <!--<div class="div-bg">
-                    <nav id="navbar" class="content">
-                    </nav>
-                    
-                </div> -->
+		<div id="container" class="container">
+            <div id="header" class="header">
+                <div class="header" id="header-img">
+                </div>
             </div>
-            <hr id="postHeader" />
+                <div id="header-divider"></div>
             <div id="sidebar1" class="div-bg">
                 <select onchange='location=this.options[this.selectedIndex].value;' id="navMenu" style='width:160px;font-size:1em;background:white;padding:4px;border:1px solid #000;border-radius: 5px;color: #000;margin-top: 0px;'>
                         <option value="https://chrixi.neocities.org/index.html">Home</option>
@@ -36,7 +26,7 @@
                         <option value="https://chrixi.neocities.org/links.html">Links</option>
                 </select>
             </div>
-            <div id="main-div" class = "div-bg">
+            <div id="main-div" class = "main div-bg">
                 <main id="main" class="content">
                     <h1>Welcome to my website!</h1>
                     <p>This is a place where I'm going to share interesting links, thoughts, and anything else I feel like.</p>
@@ -59,13 +49,15 @@
                     </form>
                 </main>
             </div>
-            <div id="sidebar2" class="div-bg">
-                <p class="content">placeholder</p>
-            </div>
-            <div id="footer">
-                <footer id="footer" style="margin-bottom: 10px;"></footer>
-            </div>
         </div>
+        <div id="footer">
+                <div id="footer-divider"></div>
+                <div class="div-bg">
+                    <footer class="footer" style="margin-bottom: 10px;">
+                        <p class="content"><a href="chrixi.neocities.org/feed.html">chrixi's weekly roundup</a> is built with <a href='https://zonelets.net/'>Zonelets</a>, and hosted by <a href='https://neocities.org/'>Neocities!</a></p>
+                    </footer>
+                </div>
+            </div>
         <script src="../script.js"></script>
 	</body>
 </html>

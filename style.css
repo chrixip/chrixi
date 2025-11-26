@@ -15,6 +15,7 @@
     --borders: 
 }
 
+/*Applies CRT effect on page */
 .crt::before {
   content: " ";
   display: block;
@@ -34,6 +35,12 @@
   pointer-events: none;
 }
 
+/*Applies to all elements*/
+* {
+    box-sizing: border-box;
+}
+
+/*Sets the borders &  background on the divs that hold content */
 .div-bg {
     border: 6px ridge #bb3d3d;
     border-radius: 9px;
@@ -42,64 +49,47 @@
     background-repeat: repeat;
 }
 
-/*Applies to all elements*/
-* {
-    box-sizing: border-box;
-}
-
+/*Sets body and background formatting */
 body {
     background-image: var(--background-img);
     background-repeat:repeat;
+    height: 100%;
 }
 
-/* Delete this eventually. This is to see how divs are setup j
-div {
-    border: 1px solid orange;
+/*===============================================
+-----THIS SECTION DEFINES THE CONTAINER GRID-----
+================================================*/
+.container {
+    max-width: 900px;
+    height: 93vh;
+    display: grid;
+    border: 9px ridge var(--content-color);
+    border-radius: 15px;
+    padding: 15px;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-rows: auto auto 5fr auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    margin: 0 auto;
+    /* this centers the entire page */
+    background-image: var(--container-bg-img);
 }
-    */
 
-#topBar {
-    color: var(--content-color);
-    background-image: var(--content-bg-img);
-    width: 100%;
-    height: 30px;
-    padding: 10px;
-    font-size: smaller;
-    background-image: url("assets/houses.png");
-    background-repeat:repeat-x;
+#header {
     grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-}
-
-
-#headerArea {
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 3;
     grid-row-start: 1;
     order: 1;
 }
 
-#postHeader {
+#header-divider {
     border:0;
     height: 61px;
-    width: 100%;
     background-image: url("assets/fence2.gif");
     background-repeat: repeat-x;
+    background-position: center center;
     grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-}
-
-#footer_hr {
-    border:0;
-    height: 30px;
-    width: 100%;
-    background-image: url("assets/train_divider.gif");
-    background-repeat: repeat-x;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 5;
+    grid-column-end: 3;
 }
 
 #sidebar1 {
@@ -109,55 +99,41 @@ div {
     order: 3;
 }
 
-#main {
+.main {
     background-color: var(--content-bg);
-    padding: 20px;
     order: 2;
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 3;
 }
 
-#sidebar2 {
-    background-color: var(--content-bg);
-    padding: 20px;
-    order: 2;
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 3;
-}
+/*===============================================
+-----THIS SECTION DEFINES THE CONTAINER GRID-----
+================================================*/
 
 #footer {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 5;
     text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-#container {
-    max-width: 900px;
-    display: grid;
-    border: 9px ridge var(--content-color);
-    border-radius: 15px;
-    padding: 15px;
-    grid-template-columns: 1.3fr 550px 1fr;
-    grid-column-gap: 10px;
-    /* this is the width of your layout! */
-    /* if you change the above value, scroll to the bottom
-and change the media query according to the comment! */
-    margin: 0 auto;
-    /* this centers the entire page */
-    background-image: var(--container-bg-img);
+#footer-divider {
+    border:0;
+    height: 30px;
+    width: 100%;
+    background-image: url("assets/train_divider.gif");
+    background-repeat: repeat-x;
 }
 
 /* the area below is for all links on your page
 EXCEPT for the navigation */
-#container a {
+.container a {
     color: var(--content-color);
     font-weight: bold;
 }
 
-#header {
+.header {
     width: 100%;
     /* header color here! */
     height: 100px;
@@ -167,22 +143,32 @@ EXCEPT for the navigation */
     /* this is only for a background image! */
     /* if you want to put images IN the header, 
 you can add them directly to the <div id="header"></div> element! */
-    background-image: var(--header-img);
+    /*background-image: var(--header-img);
     background-size: 80%;
+    
     background-repeat: no-repeat;
+    background-position: center center;*/
+}
+
+#header-img {
+    background-image: var(--header-img);
     background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .content {
-    background-image: var(--content-bg-img);
+    background: var(--content-bg);
     background-repeat: repeat;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    mask:
+        linear-gradient(0,#0000 20px,#000 0px),
+        radial-gradient(20px,#000 calc(100%-1px),#0000) bottom/37px 40px
 }
 
-/* navigation section!! */
+/* navigation section!! 
 #navbar {
     height: 40px;
     flex: 1;
@@ -200,7 +186,7 @@ you can add them directly to the <div id="header"></div> element! */
     padding-top: 10px;
 }
 
-/* navigation links*/
+/* navigation links
 #navbar li a {
     color: var(--content-color);
     font-weight: 800;
@@ -209,10 +195,10 @@ you can add them directly to the <div id="header"></div> element! */
         -1px -1px 1px rgba(255,255,255,.1), 
         1px 1px 1px rgba(0,0,0,.5), 
         4px 4px 5px #070F05;
-    /* this removes the underline */
+    /* this removes the underline 
 }
 
-/* navigation link when a link is hovered over */
+/* navigation link when a link is hovered over 
 #navbar li a:hover {
     color: #a49cba;
     text-decoration: underline;
@@ -255,16 +241,6 @@ left sidebar is 1, content is 2, and right sidebar is 3! */
 
 #rightSidebar {
     order: 3;
-}
-
-footer {
-    background-color: #183910;
-    /* background color for footer */
-    width: 100%;
-    height: 40px;
-    padding: 10px;
-    text-align: center;
-    /* this centers the footer text */
 }
 
 h1,
