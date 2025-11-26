@@ -12,7 +12,6 @@
     --content-bg: #BACD9E;
     /* theme colors */
     --content-color: #77FA57;
-    --borders: 
 }
 
 /*Applies CRT effect on page */
@@ -185,9 +184,7 @@ you can add them directly to the <div id="header"></div> element! */
     margin-right: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    /*mask:
-        linear-gradient(0,#0000 20px,#000 0px),
-        radial-gradient(20px,#000 calc(100%-1px),#0000) bottom/37px 40px */
+    box-shadow: inset 13px 0px 6px -10px rgb(66 66 66 / 20%), inset -13px 0px 6px -10px rgb(66 66 66 / 56%), inset 0px 13px 6px -10px #ffffff, inset 0px -13px 6px -10px rgb(66 66 66 / 38%);
 }
 
 
@@ -207,7 +204,7 @@ main {
 }
 
 #newsletter-form {
-    align-content:
+    align-content: center;
 }
 
 button {
@@ -268,12 +265,10 @@ button {
     padding: 10px;
     margin: 10px;
     border: 3px outset #2f3f2e;
-    background-color:#bdc0bd;
-    mask: 
-        linear-gradient(0,#0000 20px,#000 0) 0 10px,
-        radial-gradient(10px,#000 calc(100% - 1px),#0000) 50%/18.5px 20px repeat space,     
-        linear-gradient(-90deg,#0000 20px,#000 0) 10px,
-        radial-gradient(10px,#000 calc(100% - 1px),#0000) 50%/20px 18.5px space repeat;
+    background-color:#FAFFFA;
+    border-width: 12px;
+    border-style: solid;
+    border-image: url("assets/scallop_border.png") 9 fill round;
 
 }
 
