@@ -84,7 +84,7 @@ body {
     grid-template-rows: auto auto 5fr auto;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    margin: 20px auto;
+    margin: 5px auto;
     /* this centers the entire page */
     background-image: var(--container-bg-img);
 }
@@ -193,11 +193,41 @@ you can add them directly to the <div id="header"></div> element! */
 
 /* this is the color of the main content area,
 between the sidebars! */
+
+#main-div {
+    display:grid;
+    grid-row-gap: 10px;
+}
+
 main {
     background-color: var(--content-bg);
     flex: 1;
     padding: 20px;
     order: 2;
+}
+
+#newsletter-form {
+    align-content:
+}
+
+button {
+    text-align:center;
+    background:#ffc6ee;
+    padding:9px;
+    width: 50%;
+    border:2px outset #ffc6ee;
+    border-radius:10px;
+    margin:0 0 5px 0;
+    place-self: center;
+    cursor: pointer;
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    text-shadow: -2px 0 #ffafe7, 0 2px #ffafe7, 2px 0 #ffafe7, 0 -2px #ffafe7;
+ }
+
+#newsletter-submit {
+    margin-top:10px;
 }
 
 /*Settings for the sidebars */
@@ -234,14 +264,17 @@ main {
     margin-top: 10px;
 }
 
-#nav-buttons {
+.section {
     padding: 10px;
     margin: 10px;
     border: 3px outset #2f3f2e;
-}
-
-.section {
     background-color:#bdc0bd;
+    mask: 
+        linear-gradient(0,#0000 20px,#000 0) 0 10px,
+        radial-gradient(10px,#000 calc(100% - 1px),#0000) 50%/18.5px 20px repeat space,     
+        linear-gradient(-90deg,#0000 20px,#000 0) 10px,
+        radial-gradient(10px,#000 calc(100% - 1px),#0000) 50%/20px 18.5px space repeat;
+
 }
 
 h1,
