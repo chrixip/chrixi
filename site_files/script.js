@@ -321,3 +321,19 @@ if (document.title === "Blog Post") {
 //==[ 5. END RSS FETCH ]==
 
 });
+
+//==[ 6. EXTRA SCRIPTS ]==
+
+// This script alerts the user that the site is best viewed on desktop
+
+function isMobile() {
+            return /mobi|android|iphone/i.test(navigator.userAgent.toLowerCase());
+        }
+
+        function showMobileAlert() {
+            if (isMobile()) {
+                alert("Hey! This site is best viewed on desktop (or maybe even a peePad). There might be some funky behavior if you stay on here, but if you're my friend let me know about that.");
+            }
+        }
+
+        window.onload = showMobileAlert;
