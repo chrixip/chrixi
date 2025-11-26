@@ -9,7 +9,7 @@
     --background-img: url("assets/flowers.jpg");
     --container-bg-img: url("assets/stripe.png");
     --div-bg-img: url("assets/misc071.gif");
-    --content-bg: #BACD9E;
+    --content-bg: #d0d1ce;
     /* theme colors */
     --content-color: #77FA57;
 }
@@ -81,7 +81,7 @@ body {
     border-radius: 15px;
     padding: 15px;
     grid-template-columns: 0.3fr 1fr;
-    grid-template-rows: auto auto 5fr auto;
+    grid-template-rows: auto auto 2.1fr 5fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     margin: 5px auto;
@@ -106,11 +106,13 @@ body {
     grid-column-end: 3;
 }
 
-#sidebar1 {
+#navbar {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 3;
+    grid-row-end: 4;
     order: 3;
+    height:100%;
 }
 
 .main {
@@ -118,6 +120,7 @@ body {
     order: 2;
     grid-column-start: 2;
     grid-column-end: 3;
+    grid-row-end:5;
     grid-row-start: 3;
 }
 
@@ -181,11 +184,15 @@ you can add them directly to the <div id="header"></div> element! */
 .content {
     background: var(--content-bg);
     background-repeat: repeat;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 5px;
+    padding:20px;
+    border: 1px solid darkgray;
+    border-radius: 2px;
     box-shadow: inset 13px 0px 6px -10px rgb(66 66 66 / 20%), inset -13px 0px 6px -10px rgb(66 66 66 / 56%), inset 0px 13px 6px -10px #ffffff, inset 0px -13px 6px -10px rgb(66 66 66 / 38%);
+}
+
+.content h1{
+    text-align: center;
 }
 
 
@@ -197,11 +204,31 @@ between the sidebars! */
     grid-row-gap: 10px;
 }
 
-main {
-    background-color: var(--content-bg);
-    flex: 1;
-    padding: 20px;
+#main-grid {
+    display:grid;
+    grid-template-columns: 0.5fr 1fr auto auto auto;
+    grid-template-rows: 25% auto auto auto auto;
+}
+
+#box1 {
+    order: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+}
+
+#box2 {
     order: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start:2;
+}
+
+#box3 {
+    order: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start:2;
 }
 
 #newsletter-form {
@@ -263,7 +290,6 @@ button {
 }
 
 .section {
-    padding: 10px;
     margin: 10px;
     border: 3px outset #2f3f2e;
     background-color:#FAFFFA;
