@@ -295,6 +295,7 @@ button {
 #sidebar-box-6 {
     background-color: #99B7B2;
     display: flex;
+    justify-content: center;
 }
 
 .buttons {
