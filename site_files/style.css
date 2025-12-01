@@ -9,7 +9,7 @@
     --background-img: url("assets/flowers.jpg");
     --container-bg-img: url("assets/stripe.png");
     --div-bg-img: url("assets/misc071.gif");
-    --content-bg: #e2cebb;
+    --content-bg: #F8F9F9;
     /* theme colors */
     --content-color: #77FA57;
     --playerbg: #D2D88F;
@@ -88,7 +88,7 @@ body {
     border: 9px ridge var(--content-color);
     border-radius: 15px;
     padding: 15px;
-    grid-template-columns: 0.3fr 1fr;
+    grid-template-columns: auto auto;
     grid-template-rows: auto auto 2.1fr 5fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
@@ -231,6 +231,9 @@ between the sidebars! */
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start:2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #box3 {
@@ -289,6 +292,11 @@ button {
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
+#sidebar-box-6 {
+    background-color: #99B7B2;
+    display: flex;
+}
+
 .buttons {
     text-align:center;
     background:#AC93B3;
@@ -318,7 +326,7 @@ button {
 .section {
     margin: 10px;
     border: 3px outset #2f3f2e;
-    background-color:#FAFFFA;
+    background-color:#DBBF92;
     border-width: 12px;
     border-style: solid;
     border-image: url("assets/scallop_border.png") 9 fill round;
