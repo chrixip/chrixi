@@ -200,7 +200,7 @@ you can add them directly to the <div id="header"></div> element! */
 }
 
 .content h1{
-    text-align: center;
+    text-align: left;
 }
 
 
@@ -247,6 +247,14 @@ between the sidebars! */
     grid-column-end: 3;
     grid-row-start:1;
     grid-row-end: 4;
+}
+
+#box4 hr {
+    background-image: url("assets/strawberrry_divider.png");
+    height:30px;
+    background-repeat:repeat-x;
+    border:none;
+    background-position-x: center;
 }
 
 #newsletter-form {
