@@ -317,14 +317,6 @@ strong {
     color: #ED64F5;
 }
 
-/* this is just a cool box, it's the darker colored one */
-.box {
-    background-color: #62C5D9;
-    border: 1px solid #ED64F5;
-    padding: 10px;
-}
-
-
 /* BELOW THIS POINT IS MEDIA QUERY */
 
 /* so you wanna change the width of your page? 
