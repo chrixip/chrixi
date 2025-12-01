@@ -12,12 +12,12 @@
     --content-bg: #e2cebb;
     /* theme colors */
     --content-color: #77FA57;
-    --playerbg: #A4BE7B;
-    --playerborder: #5F8D4E;
-    --playertext: #285430;
-    --playertitlebg: #5F8D4E;
-    --playerbar: #285430;
-    --playericons: #5F8D4E;
+    --playerbg: #D2D88F;
+    --playerborder: #81892B;
+    --playertext: #81892B;
+    --playertitlebg: #F7FBCE;
+    --playerbar: #A7AE55;
+    --playericons: #81892B;
 }
 
 /*Applies CRT effect on page */
@@ -263,10 +263,10 @@ between the sidebars! */
 
 button {
     text-align:center;
-    background:#ffc6ee;
+    background:#AC93B3;
     padding:9px;
     width: 50%;
-    border:2px outset #ffc6ee;
+    border:2px outset #AC93B3;
     border-radius:10px;
     margin:0 0 5px 0;
     place-self: center;
@@ -274,7 +274,7 @@ button {
     color:white;
     font-weight:bold;
     text-decoration:none;
-    text-shadow: -2px 0 #ffafe7, 0 2px #ffafe7, 2px 0 #ffafe7, 0 -2px #ffafe7;
+    text-shadow: -2px 0 #6A3B75, 0 2px #6A3B75, 2px 0 #6A3B75, 0 -2px #6A3B75;
  }
 
 #newsletter-submit {
@@ -291,24 +291,24 @@ button {
 
 .buttons {
     text-align:center;
-    background:#ffc6ee;
+    background:#AC93B3;
     padding:9px;
     width: 75%;
-    border:2px outset #ffc6ee;
+    border:2px outset #AC93B3;
     border-radius:10px;
     margin:0 0 5px 0;
     place-self: center;
 }
 
 .buttons:hover {
-    border:2px inset #ffc6ee;
+    border:2px inset #AC93B3;
 }
 
 .buttons a {
     color:white;
     font-weight:bold;
     text-decoration:none;
-    text-shadow: -2px 0 #ffafe7, 0 2px #ffafe7, 2px 0 #ffafe7, 0 -2px #ffafe7;
+    text-shadow: -2px 0 #6A3B75, 0 2px #6A3B75, 2px 0 #6A3B75, 0 -2px #6A3B75;
 }
 
 .linkbutton-1 {
@@ -328,7 +328,7 @@ button {
 h1,
 h2,
 h3 {
-    color: #ED64F5;
+    color: #4F1F5C;
 }
 
 h1 {
@@ -337,7 +337,7 @@ h1 {
 
 strong {
     /* this styles bold text */
-    color: #ED64F5;
+    color: #4F1F5C;
 }
 
 /*===============================================
@@ -417,6 +417,10 @@ border: 3px outset var(--playerborder);
 padding: 5px;
 align-content: center;
 align-items: center;
+}
+
+.playercontainer button {
+    text-shadow: -2px 0 #F7FBCE, 0 2px #F7FBCE, 2px 0 #F7FBCE, 0 -2px #F7FBCE;
 }
 
 .playercontainer .now-playing {
