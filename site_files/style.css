@@ -9,7 +9,7 @@
     --background-img: url("assets/flowers.jpg");
     --container-bg-img: url("assets/stripe.png");
     --div-bg-img: url("assets/misc071.gif");
-    --content-bg: #d0d1ce;
+    --content-bg: #e2cebb;
     /* theme colors */
     --content-color: #77FA57;
 }
@@ -19,6 +19,8 @@
   content: " ";
   display: block;
   position: absolute;
+  height:100%;
+  width:100%;
   top: 0;
   left: 0;
   bottom: 0;
