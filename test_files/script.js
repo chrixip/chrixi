@@ -36,12 +36,11 @@ let authorLink = "https://chrixi.neocities.org"; // Enter your website, social m
 //[ "posts/2025-11-24-test.html" ],
 //[ "posts/2020-11-10-Post-Template.html" ] ];
 
-//==[ 2a. HISTORIC POSTS ARRAY ]==
+//==[ 2a . HISTORIC POSTS ARRAY ]==
 
 /* If you already have an existing pre-RSS posts array that you'd like to preserve
    in your blog's archive, copy that array below. The RSS posts will be added to it later. */
 let postsArray = [
-  [ "posts/2025-11-24-test.html" ],
   [ "posts/2020-11-10-Post-Template.html" ]
 ];
 
@@ -238,9 +237,11 @@ for ( let i = 0; i < postsArray.length; i++ ) {
 }
 postListHTML += "</ul>";
 
+//
+
 //Generate the Recent Post List HTML, which can be shown on the home page (or wherever you want!)
 let recentPostsCutoff = 1; //Hey YOU! Change this number to set how many recent posts to show before cutting it off with a "more posts" link.
-let recentPostListHTML = "<h2>Recent Posts:</h2><ul>";
+let recentPostListHTML = "<h1>Latest Blog Post:</h1><hr /><ul>";
 let numberOfRecentPosts = Math.min( recentPostsCutoff, postsArray.length );
 for ( let i = 0; i < numberOfRecentPosts; i++ ) {
   recentPostListHTML += formatPostLink(i);
@@ -291,8 +292,8 @@ if (document.getElementById("nextprev")) {
 if (document.getElementById("postlistdiv")) {
   document.getElementById("postlistdiv").innerHTML = postListHTML;
 }
-if (document.getElementById("recentpostlistdiv")) {
-  document.getElementById("recentpostlistdiv").innerHTML = recentPostListHTML;
+if (document.getElementById("latest-post")) {
+  document.getElementById("latest-post").innerHTML = recentPostListHTML;
 }
 /*if (document.getElementById("navbar")) {
   document.getElementById("navbar").innerHTML = navHTML;

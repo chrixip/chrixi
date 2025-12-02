@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>chrixi's weekly roundup</title>
+    <description>a place of my weekly thoughts and interesting things roundup</description>
+    <link>https://chrixi.neocities.org/</link>
+    <atom:link href="https://chrixi.neocities.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Mon, 24 Nov 2025 20:39:00 -0500</lastBuildDate>
+    <ttl>60</ttl>
+    <!--  ADD NEW POST HERE  -->
+    <item>
+      <title>test</title>
+      <description>
+        <![CDATA[ <p>test</p> ]]>
+      </description>
+      <pubDate>Mon, 24 Nov 2025 20:39:00 -0500</pubDate>
+      <link>https://chrixi.neocities.org/posts/2025-11-24-test.html</link>
+      <guid isPermaLink="false">https://chrixi.neocities.org/feed.xml#0</guid>
+    </item>
+      <item>
+      <title>test</title>
+      <description>
+        <![CDATA[ <p>test blog post</p> ]]>
+      </description>
+      <pubDate>Mon, 24 Nov 2025 15:13:19 -0500</pubDate>
+      <link>posts/2025-11-24-test.html</link>
+      <guid isPermaLink="false">#0</guid>
+    </item>
+  </channel>
+</rss>
