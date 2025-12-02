@@ -92,15 +92,18 @@ body {
     grid-template-rows: auto auto auto 5fr;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+    grid-template-areas:
+        "header header"
+        "header-divider header-divider"
+        "navbar navbar"
+        "sidebar1 main";
     margin: 5px auto;
     /* this centers the entire page */
     background-image: var(--container-bg-img);
 }
 
 #header {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
+    grid-area:header;
     order: 1;
 }
 
@@ -110,13 +113,11 @@ body {
     background-image: url("assets/fence2.gif");
     background-repeat: repeat-x;
     background-position: center center;
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-area:header-divider;
 }
 
 #navbar {
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-area:navbar;
     grid-row-start: 3;
     grid-row-end: 4;
     order: 3;
@@ -129,13 +130,16 @@ body {
     display:flex;
 }
 
+#sidebar1 {
+    background-color: var(--content-bg);
+    order: 4;
+    grid-area:sidebar1;
+}
+
 .main {
     background-color: var(--content-bg);
     order: 2;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-end:5;
-    grid-row-start: 4;
+    grid-area:main;
 }
 
 /*===============================================
@@ -212,11 +216,6 @@ you can add them directly to the <div id="header"></div> element! */
 
 /* this is the color of the main content area,
 between the sidebars! */
-
-#main-div {
-    display:grid;
-    grid-row-gap: 10px;
-}
 
 #main-grid {
     display:grid;
@@ -298,7 +297,7 @@ button {
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
-#sidebar-box-6 {
+#sidebar-box-3 {
     background-color: #99B7B2;
     display: flex;
     justify-content: center;

@@ -35,23 +35,91 @@
             <div id="sidebar1" class="div-bg sidebar-grid">
                 <div class="section">
                     <div id="sidebar-box-1" class="content">
+                        <div id="" class="playercontainer">
+      
+                        <div id="nowplaying" class="now-playing"> now playing x of y</div>
                         
+                            <audio id="mu" src="" style="display: hidden;" preload=”metadata”></audio>
+
+                            <marquee id="info" class="info" scrollamount="1"> song title here </marquee>
+
+                            <div class="trackdurationcontrols">
+                            <div id="current-time" class="time">0:00</div>
+                            <div class="bar"><input type="range" id="slider" min="0" max="100" value="0"></div>
+                            <div id="duration" class="time">0:00</div>
+                            </div>
+
+                            <div class="trackcontrols">
+                            <button id="prev-btn" onclick="prevTrack()">⏮</button>
+                            <button id="playpause-btn" onclick="playPauseTrack()">▶</button>
+                            <button id="next-btn" onclick="nextTrack()">⏭</button>
+                            </div>
+
+                            <div class="creditstooltip">◦<span class="playercredits">music player by: ibroughtyoumybullets.neocities.org</span></div>
+                        
+                            <script type="text/javascript">
+                                /*your track list! to add more than 3 songs just add another one of these, comma at the end included!!
+                                
+                                {
+                                    path: " audio source here, highly recommend using catbox for these",
+                                    title: " song name here ",
+                                    artist: " artist name here ",
+                                },  
+                                
+                                and fill it in! make sure you place it before the bracket and semicolon that ends the track list */
+                                
+                                let track_index = 0;
+                                let track_list = [
+                                {
+                                    path: "https://files.catbox.moe/im7ku3.mp3",
+                                    title: "anthems",
+                                    artist: "Charli XCX",
+                                },
+                                {
+                                    path: "https://files.catbox.moe/13mds3.mp3",
+                                    title: "HARD",
+                                    artist: "SOPHIE",
+                                },
+                                {
+                                    path: "https://files.catbox.moe/g8pbqz.mp3",
+                                    title: "Idyll",
+                                    artist: "A.G. Cook",
+                                },
+                                {
+                                    path: "https://files.catbox.moe/lphl6m.mp3",
+                                    title: "Nettles",
+                                    artist: "Ethel Cain",
+                                },
+                                {
+                                    path: "https://files.catbox.moe/rx384x.mp3",
+                                    title: "Dicks & Drugs",
+                                    artist: "Only Fire",
+                                }
+                                ];
+                            </script>
+                            <script src="https://cdn.jsdelivr.net/gh/aroundyrthroat/music-player@main/musicplayer.js"></script>
+                            <script type="text/javascript">
+                                window.addEventListener('load',(event => {
+                                    document.getElementById("playpause-btn").click();
+                                }))
+                            </script>
+                        </div>
                     </div>
                     <div id="sidebar-box-2" class="content">
-                        
+                        <iframe src="https://iframe.chat/embed?chat=15437640" id="chattable"></iframe>
                     </div>
                     <div id="sidebar-box-3" class="content">
-                        
+                        <iframe width="180" height="180" style="border:none" src="https://dimden.dev/moon?custom=1" name="dimdenmoonwidget"></iframe>
                     </div>
-                    <div id="sidebar-box-4" class="content">
+                    <!--<div id="sidebar-box-4" class="content">
                         
                     </div>
                     <div id="sidebar-box-5" class="content">
-                        <iframe src="https://iframe.chat/embed?chat=15437640" id="chattable"></iframe>
+                        
                     </div>
                     <div id="sidebar-box-6" class="content">
-                        <iframe width="180" height="180" style="border:none" src="https://dimden.dev/moon?custom=1" name="dimdenmoonwidget"></iframe>
-                    </div>
+                        
+                    </div>-->
                 </div>
             </div>
             <div id="main-div" class="main div-bg">
@@ -75,75 +143,7 @@
                             </form>
                         </div>
                         <div id="box2" class="content">
-                            <div id="" class="playercontainer">
-      
-                            <div id="nowplaying" class="now-playing"> now playing x of y</div>
                             
-                                <audio id="mu" src="" style="display: hidden;" preload=”metadata”></audio>
-
-                                <marquee id="info" class="info" scrollamount="1"> song title here </marquee>
-
-                                <div class="trackdurationcontrols">
-                                <div id="current-time" class="time">0:00</div>
-                                <div class="bar"><input type="range" id="slider" min="0" max="100" value="0"></div>
-                                <div id="duration" class="time">0:00</div>
-                                </div>
-
-                                <div class="trackcontrols">
-                                <button id="prev-btn" onclick="prevTrack()">⏮</button>
-                                <button id="playpause-btn" onclick="playPauseTrack()">▶</button>
-                                <button id="next-btn" onclick="nextTrack()">⏭</button>
-                                </div>
-
-                                <div class="creditstooltip">◦<span class="playercredits">music player by: ibroughtyoumybullets.neocities.org</span></div>
-                            
-                                <script type="text/javascript">
-                                    /*your track list! to add more than 3 songs just add another one of these, comma at the end included!!
-                                    
-                                    {
-                                        path: " audio source here, highly recommend using catbox for these",
-                                        title: " song name here ",
-                                        artist: " artist name here ",
-                                    },  
-                                    
-                                    and fill it in! make sure you place it before the bracket and semicolon that ends the track list */
-                                    
-                                    let track_index = 0;
-                                    let track_list = [
-                                    {
-                                        path: "https://files.catbox.moe/im7ku3.mp3",
-                                        title: "anthems",
-                                        artist: "Charli XCX",
-                                    },
-                                    {
-                                        path: "https://files.catbox.moe/13mds3.mp3",
-                                        title: "HARD",
-                                        artist: "SOPHIE",
-                                    },
-                                    {
-                                        path: "https://files.catbox.moe/g8pbqz.mp3",
-                                        title: "Idyll",
-                                        artist: "A.G. Cook",
-                                    },
-                                    {
-                                        path: "https://files.catbox.moe/lphl6m.mp3",
-                                        title: "Nettles",
-                                        artist: "Ethel Cain",
-                                    },
-                                    {
-                                        path: "https://files.catbox.moe/rx384x.mp3",
-                                        title: "Dicks & Drugs",
-                                        artist: "Only Fire",
-                                    }
-                                    ];
-                                </script>
-                                <script src="https://cdn.jsdelivr.net/gh/aroundyrthroat/music-player@main/musicplayer.js"></script>
-                                <script type="text/javascript">
-                                    window.addEventListener('load',(event => {
-                                        document.getElementById("playpause-btn").click();
-                                    }))
-                                </script>
-                            </div>
                         </div>
                         <div id="box3" class="content">
 
