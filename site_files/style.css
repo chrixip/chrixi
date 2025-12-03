@@ -184,6 +184,10 @@ strong {
     color: var(--bold-text-color);
 }
 
+a {
+    color: var(--container-border-color)
+}
+
 /*===============================================
         ------ CONTAINER GRID LAYOUT ------
 ================================================*/
