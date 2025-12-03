@@ -379,6 +379,42 @@ main {
         --header-img: url("assets/chrixi is online small.gif");
     }
 
+    /*-------------TYPE-SPECIFIC STYLES-------------*/
+    button {
+        margin: auto;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    /*-------------GENERAL DIV SECTION STYLING-------------*/
+    .div-bg {
+        border: 3px ridge var(--div-border-color);
+        border-radius: 6px;
+    }
+
+    .section {
+        margin: 5px;
+    }
+
+    .content {
+        margin: 5px;
+        padding:10px;
+        
+        background: var(--content-bg);
+        
+        border: 1px solid darkgray;
+        border-radius: 2px;
+        box-shadow: 
+            inset 13px 0px 6px -10px rgb(66 66 66 / 20%), 
+            inset -13px 0px 6px -10px rgb(66 66 66 / 56%), 
+            inset 0px 13px 6px -10px #ffffff, 
+            inset 0px -13px 6px -10px rgb(66 66 66 / 38%);
+    }
+
+    /*-------------ID-SPECIFIC STYLES-------------*/
+
     #header {
         height: 50px;
     }
@@ -391,13 +427,6 @@ main {
         display:none;
     }
 
-    button {
-        margin: auto;
-    }
-
-    p {
-        font-size: 14px;
-    }
 
     /*-------------CONTAINER GRID LAYOUT-------------*/
     #container {
