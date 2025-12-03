@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html class=crt>
-	<head>
+	
+<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>welcome to the bog...</title>
 		<meta name="description" content="mine own site">
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+        <title>welcome to the bog...</title>
+        
         <script src="https://iframe.chat/scripts/main.min.js"></script>
         <script>
             chattable.initialize({
                 theme: "tendo" // set the value to the name of the theme
             });
         </script>
-		<link rel = "stylesheet" type = "text/css" href = "style.css" />
+		
+        <link rel = "stylesheet" type = "text/css" href = "style.css" />
         <link href="./feed.xml" rel="alternate" type="application/rss+xml" title="chrixi's weekly roundup">
-	</head>
-	<body>
+	
+    </head>
+	
+    <body>
 
 		<div id="container">
             
-            <div id="header">
-            </div>
+            <div id="header"></div>
             
             <div id="header-divider"></div>
             
             <div id="navbar" class="div-bg">
+                
                 <div id="nav-buttons" class="section">
                     <button onclick="window.location.href='./index.html';">Home</button>
                     <button onclick="window.location.href='./feed.html';">Feed</button>
@@ -32,148 +38,182 @@
                     <button onclick="window.location.href='./about.html';">About</button>
                     <button onclick="window.location.href='./links.html';">Links</button>
                 </div>
+            
             </div>
 
             <div id="sidebar1" class="div-bg">
+                
                 <div class="section">
+                    
                     <div id="sidebar-box-1" class="content">
                         <div id="" class="playercontainer">
       
-                        <div id="nowplaying" class="now-playing"> now playing x of y</div>
+                            <div id="nowplaying" class="now-playing"> now playing x of y</div>
                         
                             <audio id="mu" src="" style="display: hidden;" preload=”metadata”></audio>
 
                             <marquee id="info" class="info" scrollamount="1"> song title here </marquee>
 
                             <div class="trackdurationcontrols">
-                            <div id="current-time" class="time">0:00</div>
-                            <div class="bar"><input type="range" id="slider" min="0" max="100" value="0"></div>
-                            <div id="duration" class="time">0:00</div>
+                                <div id="current-time" class="time">0:00</div>
+                                <div class="bar"><input type="range" id="slider" min="0" max="100" value="0"></div>
+                                <div id="duration" class="time">0:00</div>
                             </div>
 
                             <div class="trackcontrols">
-                            <button id="prev-btn" onclick="prevTrack()">⏮</button>
-                            <button id="playpause-btn" onclick="playPauseTrack()">▶</button>
-                            <button id="next-btn" onclick="nextTrack()">⏭</button>
+                                <button id="prev-btn" onclick="prevTrack()">⏮</button>
+                                <button id="playpause-btn" onclick="playPauseTrack()">▶</button>
+                                <button id="next-btn" onclick="nextTrack()">⏭</button>
                             </div>
 
                             <div class="creditstooltip">◦<span class="playercredits">music player by: ibroughtyoumybullets.neocities.org</span></div>
                         
                             <script type="text/javascript">
-                                /*your track list! to add more than 3 songs just add another one of these, comma at the end included!!
-                                
-                                {
-                                    path: " audio source here, highly recommend using catbox for these",
-                                    title: " song name here ",
-                                    artist: " artist name here ",
-                                },  
-                                
-                                and fill it in! make sure you place it before the bracket and semicolon that ends the track list */
                                 
                                 let track_index = 0;
+                                
                                 let track_list = [
-                                {
-                                    path: "https://files.catbox.moe/im7ku3.mp3",
-                                    title: "anthems",
-                                    artist: "Charli XCX",
-                                },
-                                {
-                                    path: "https://files.catbox.moe/13mds3.mp3",
-                                    title: "HARD",
-                                    artist: "SOPHIE",
-                                },
-                                {
-                                    path: "https://files.catbox.moe/g8pbqz.mp3",
-                                    title: "Idyll",
-                                    artist: "A.G. Cook",
-                                },
-                                {
-                                    path: "https://files.catbox.moe/lphl6m.mp3",
-                                    title: "Nettles",
-                                    artist: "Ethel Cain",
-                                },
-                                {
-                                    path: "https://files.catbox.moe/rx384x.mp3",
-                                    title: "Dicks & Drugs",
-                                    artist: "Only Fire",
-                                }
+                                    {
+                                        path: "https://files.catbox.moe/im7ku3.mp3",
+                                        title: "anthems",
+                                        artist: "Charli XCX",
+                                    },
+                                    {
+                                        path: "https://files.catbox.moe/13mds3.mp3",
+                                        title: "HARD",
+                                        artist: "SOPHIE",
+                                    },
+                                    {
+                                        path: "https://files.catbox.moe/g8pbqz.mp3",
+                                        title: "Idyll",
+                                        artist: "A.G. Cook",
+                                    },
+                                    {
+                                        path: "https://files.catbox.moe/lphl6m.mp3",
+                                        title: "Nettles",
+                                        artist: "Ethel Cain",
+                                    },
+                                    {
+                                        path: "https://files.catbox.moe/rx384x.mp3",
+                                        title: "Dicks & Drugs",
+                                        artist: "Only Fire",
+                                    }
                                 ];
+
                             </script>
+
                             <script src="https://cdn.jsdelivr.net/gh/aroundyrthroat/music-player@main/musicplayer.js"></script>
+                            
                             <script type="text/javascript">
                                 window.addEventListener('load',(event => {
                                     document.getElementById("playpause-btn").click();
                                 }))
                             </script>
+                        
                         </div>
                     </div>
+                    
                     <div id="sidebar-box-2" class="content">
-                        <iframe height="300" src="https://iframe.chat/embed?chat=15437640" id="chattable"></iframe>
+                        <iframe height="300" width="100%" src="https://iframe.chat/embed?chat=15437640" id="chattable"></iframe>
                     </div>
+                    
                     <div id="sidebar-box-3" class="content">
                         <iframe width="180" height="120" style="border:none" src="https://dimden.dev/moon?custom=1" name="dimdenmoonwidget"></iframe>
                     </div>
+                    
                     <!--<div id="sidebar-box-4" class="content">
                         
                     </div>
+                    
                     <div id="sidebar-box-5" class="content">
                         
                     </div>
+                    
                     <div id="sidebar-box-6" class="content">
                         
                     </div>-->
+                
                 </div>
+            
             </div>
+
             <div id="main-div" class="div-bg">
-                <main id="main-grid"class="section"> 
-                        <div id="box1" class="content">
-                            <h1>Welcome to my website!</h1>
-                            <p>This is a place where I'm going to share interesting links, thoughts, and anything else I feel like.</p>
-                            <p>I plan on making a newsletter, but I have to figure out how to do that.....For now you can subscribe to my blog on this site</p>
-                            <form id="newsletter-form" action="https://formkeep.com/f/9731d40a9d6c"
-                                accept-charset="UTF-8"
-                                method="POST">
-                                <p>
-                                    <label for = "name">Name:</label>
-                                    <input type = "text" id="name" name="user_name" required />
-                                </p>
-                               <p>
-                                    <label for = "email">Email:</label>
-                                    <input type="email" id="email" name="user_email" required />
-                                </p>
-                                    <button type="submit" id="newsletter-submit">Subscribe</button>
-                            </form>
-                        </div>
-                        <div id="box2" class="content">
+                
+                <main class="section"> 
+                    
+                    <div id="welcome" class="content">
+                        <h1>Welcome to my website!</h1>
+                        <br />
+
+                        <p>This is a place where I'm going to share interesting links, thoughts, and anything else I feel like.</p>
+                        <br />
+
+                        <p>I plan on making a newsletter, but I have to figure out how to do that.....For now you can subscribe to my blog on this site</p>
+                    </div>
+
+                    <div id="about" class="content">
+                        <h3>About Me</h3>
+                        <br />
+
+                    </div>
+                    
+                    <div id="subscribe" class="content">
+                        <h3>Subscribe to my newsletter below!</h3>
+                        <br />
+
+                        <p>If you subscribe, you won't miss a single blog post! (threat)</p>
+                        <br />
+
+                        <form id="newsletter-form" action="https://formkeep.com/f/9731d40a9d6c"
+                            accept-charset="UTF-8"
+                            method="POST">
                             
-                        </div>
-                        <div id="box3" class="content">
-
-                        </div>
-                        <div id="box4" class="content">
-                            <h1>Latest Blog Post</h1>
-                            <hr />
+                            <p>
+                                <label for = "name">Name:</label>
+                                <input type = "text" id="name" name="user_name" required />
+                            </p>
                             <br />
-                            <div id="latest-post-div">
-                                <!-- Latest post will be loaded here by script.js -->
-                                 <h3>Lorem Ipsum</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In felis massa, iaculis et dignissim eu, mattis vitae velit. Mauris feugiat iaculis blandit. Nulla dictum imperdiet sodales. Nulla et iaculis sem. Vestibulum tincidunt, purus non faucibus eleifend, quam leo efficitur odio, nec tempus velit dolor sit amet arcu. Donec mollis mi non erat vehicula, ut tincidunt ex pulvinar. Sed a posuere nunc. Suspendisse id dui eu ex semper efficitur. Cras dui lectus, fermentum eu auctor vitae, mollis id tellus. Praesent rutrum laoreet eros, eu consequat orci condimentum sed. Sed quis augue quis leo imperdiet efficitur. Donec sit amet lacus id odio suscipit dignissim. Aenean non ultricies ipsum, id tincidunt ligula. In semper consectetur eros. Integer posuere euismod sodales.</p>
-                                <br />
-                            <p>Aliquam ultrices, velit ac vestibulum tristique, felis leo porttitor velit, sed maximus nisi leo nec libero. Aenean elit mauris, egestas id facilisis finibus, finibus quis orci. Sed commodo diam metus, eu semper odio iaculis gravida. Suspendisse vulputate erat eu eros ullamcorper, vel blandit metus semper. In vitae metus nec libero varius consequat. Mauris tincidunt rhoncus metus, et eleifend diam eleifend ut. Donec dapibus condimentum dictum. Mauris rhoncus consequat nulla, vitae dignissim erat ullamcorper eget.</p>
-                            </div>
-                        </div>
-                </main>
-            </div>
-        </div>
 
-        
+                            <p>
+                                <label for = "email">Email:</label>
+                                <input type="email" id="email" name="user_email" required />
+                            </p>
+                                <button type="submit" id="newsletter-submit">Subscribe</button>
+                        </form>
+                    </div>
+                    
+                    
+                    
+                    <div id="post" class="content">
+                        <h1>Latest Blog Post</h1>
+                        <hr id="post-divider"/>
+                        <br />
+                        <div id="latest-post-div">
+                            <!-- Latest post will be loaded here by script.js -->
+                                <h3>Lorem Ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In felis massa, iaculis et dignissim eu, mattis vitae velit. Mauris feugiat iaculis blandit. Nulla dictum imperdiet sodales. Nulla et iaculis sem. Vestibulum tincidunt, purus non faucibus eleifend, quam leo efficitur odio, nec tempus velit dolor sit amet arcu. Donec mollis mi non erat vehicula, ut tincidunt ex pulvinar. Sed a posuere nunc. Suspendisse id dui eu ex semper efficitur. Cras dui lectus, fermentum eu auctor vitae, mollis id tellus. Praesent rutrum laoreet eros, eu consequat orci condimentum sed. Sed quis augue quis leo imperdiet efficitur. Donec sit amet lacus id odio suscipit dignissim. Aenean non ultricies ipsum, id tincidunt ligula. In semper consectetur eros. Integer posuere euismod sodales.</p>
+                            <br />
+                        <p>Aliquam ultrices, velit ac vestibulum tristique, felis leo porttitor velit, sed maximus nisi leo nec libero. Aenean elit mauris, egestas id facilisis finibus, finibus quis orci. Sed commodo diam metus, eu semper odio iaculis gravida. Suspendisse vulputate erat eu eros ullamcorper, vel blandit metus semper. In vitae metus nec libero varius consequat. Mauris tincidunt rhoncus metus, et eleifend diam eleifend ut. Donec dapibus condimentum dictum. Mauris rhoncus consequat nulla, vitae dignissim erat ullamcorper eget.</p>
+                        </div>
+                    </div>
+                
+                </main>
+            
+            </div>
+
+        </div>
 
         <div id="footer">
-                <div id="footer-divider"></div>
-                <footer class="footer">
-                    <p><a href="https://chrixi.neocities.org/feed.html">chrixi's weekly roundup</a> is built with <a href='https://zonelets.net/'>Zonelets</a>, and hosted by <a href='https://neocities.org/'>Neocities!</a></p>
-                </footer>
+            
+            <div id="footer-divider"></div>
+            
+            <footer class="footer">
+                <p><a href="https://chrixi.neocities.org/feed.html">chrixi's weekly roundup</a> is built with <a href='https://zonelets.net/'>Zonelets</a>, and hosted by <a href='https://neocities.org/'>Neocities!</a></p>
+            </footer>
+        
         </div>
+
         <script src="script.js"></script>
-	</body>
+	
+    </body>
 </html>

@@ -1,4 +1,3 @@
-
 /*===============================================
         ------ BASE STYLING ------
 ================================================*/
@@ -21,8 +20,10 @@
     --container-border-color: #77FA57;
     --div-border-color: #91581C;
     --content-bg-color: #F8F9F9;
+    
     --footer-bg-color: #6B3F23;
     --moon-phase-bg-color: #99B7B2;
+    
     --bold-text-color: #4F1F5C;
 
     /* Button Colors */
@@ -190,12 +191,6 @@ strong {
 #container {
     display: grid;
     
-    max-width: 2000px;
-    height: 93vh;
-    
-    margin: 25px auto;
-    padding: 15px;
-    
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto 5fr;
     grid-gap: 10px;
@@ -219,12 +214,45 @@ strong {
     grid-area:navbar;
 }
 
+#sidebar1 {
+    grid-area:sidebar1;
+}
+
 #main-div {
     grid-area:main;
 }
 
-#sidebar1 {
-    grid-area:sidebar1;
+/*===============================================
+        ------ MAIN GRID LAYOUT ------
+================================================*/
+
+main {
+    display:grid;
+    
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        'welcome post post post'
+        'about post post post'
+        'subscribe post post post';
+    
+    align-content: center;
+}
+
+#welcome {
+    grid-area: welcome;
+}
+
+#subscribe {
+    grid-area: subscribe;
+}
+
+#about {
+    grid-area: about;
+}
+
+#post {
+    grid-area: post;
 }
 
 /*===============================================
@@ -233,6 +261,12 @@ strong {
 
 /*-------------CONTAINER STYLES-------------*/
 #container {
+    max-width: 2000px;
+    height: 93vh;
+    
+    margin: 15px auto;
+    padding: 15px;
+    
     background-image: var(--container-bg-img);
     
     border: 9px ridge var(--container-border-color);
@@ -285,19 +319,35 @@ strong {
     justify-content: center;
 }
 
+/*-------------MAIN CONTENT STYLES-------------*/
+#post-divider {
+    height:30px;
+    
+    background-image: var(--strawberry-divider-img);
+    background-repeat:repeat-x;
+    background-position-x: center;
+    
+    border:none;
+}
 
+#newsletter-form {
+    align-content: center;
+}
 
+#newsletter-submit {
+    margin-top:10px;
+}
 
-/*===============================================
-------THIS SECTION ENDS THE CONTAINER GRID------
-================================================*/
-
+/*-------------FOOTER STYLES-------------*/
 #footer {
-    text-align: center;
     bottom: 0;
-    width: 100%;
     flex-grow: 1;
+    
+    width: 100%;
+    
     background-color: var(--footer-bg-color);
+    
+    text-align: center;
 }
 
 #footer p {
@@ -306,78 +356,349 @@ strong {
 }
 
 #footer-divider {
-    border:0;
-    margin-top:10px;
-    margin-bottom:10px;
     height: 30px;
     width: 100%;
+    
+    margin-top:10px;
+    margin-bottom:10px;
+    
     background-image: var(--footer-divider-img);
     background-repeat: repeat-x;
+    
+    border:0;
 }
 
+/*===============================================
+        ------RESPONSIVE STYLING------
+================================================*/
 
-/* this is the color of the main content area,
-between the sidebars! */
+@media only screen and (max-width: 1000px) {
+    
+    :root {
+        /* Assets */
+        --header-img: url("assets/chrixi is online small.gif");
+    }
 
-#main-grid {
-    display:grid;
-    align-content: center;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas:
-        'welcome post post post'
-        'box2 post post post'
-        'box3 post post post';
+    #header {
+        height: 50px;
+    }
+
+    #header-divider {
+        display:none;
+    }
+
+    #footer {
+        display:none;
+    }
+
+    button {
+        margin: auto;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    /*-------------CONTAINER GRID LAYOUT-------------*/
+    #container {
+        grid-template-rows: auto;
+        grid-template-columns:100%;
+        grid-template-areas:
+            "header"
+            "header-divider"
+            "navbar"
+            "main-div";
+        grid-gap: 3px;
+    }
+    
+    #header {
+        grid-area: header;
+        object-fit: contain;
+    }
+    
+    #main-div {
+        grid-area: main-div;
+    }
+
+    #navbar {
+        grid-area: navbar;
+    }
+
+    #sidebar1 {
+        display:none;
+    }
+
+    /*-------------MAIN GRID LAYOUT-------------*/
+    main {
+        display:grid;
+        
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            'welcome'
+            'about'
+            'post'
+            'subscribe';
+        
+        align-content: center;
+    }
+
+    #welcome {
+        grid-area: welcome;
+    }
+
+    #about {
+        grid-area: about;
+    }
+
+    #post {
+        grid-area: post;
+    }
+
+    #subscribe {
+        grid-area: subscribe;
+    }
+    
 }
 
-#box1 {
-    order: 1;
-    grid-area: welcome;
-}
+/*===============================================
+        ------WEBAMP STYLING------
+================================================*/
 
-#box2 {
-    order: 2;
-    grid-area: box2;
+.playercontainer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#box3 {
-    order: 3;
-    grid-area: box3;
-}
-
-#box4 {
-    order: 3;
-    grid-area: post;
-}
-
-#box4 hr {
-    background-image: var(--strawberry-divider-img);
-    height:30px;
-    background-repeat:repeat-x;
-    border:none;
-    background-position-x: center;
-}
-
-#newsletter-form {
+    flex-flow: column nowrap;
+    
+    height: 250px;
+    width: 100%;
+    
+    padding: 5px;
+    
+    background-color: var(--playerbg);
+    
+    border: 3px outset var(--playerborder);
+    
     align-content: center;
+    align-items: center;
 }
 
-
-
-#newsletter-submit {
-    margin-top:10px;
+.playercontainer button {
+    text-shadow: 
+        -2px 0 #F7FBCE, 
+        0 2px #F7FBCE, 
+        2px 0 #F7FBCE, 
+        0 -2px #F7FBCE;
 }
 
-/*Settings for the sidebars */
+.playercontainer .now-playing {
+    height: 15%;
+    width: 100%;
+    
+    color: var(--playertext);
+    
+    text-align: center;
+    text-justify: center;
+    
+    font-size: 12px;
+}
 
+.playercontainer marquee {
+    height: 35%;
+    width: 70%;
+    
+    background-color: var(--playertitlebg);
+    
+    border: 3px inset var(--playerborder);
+    
+    text-align: center;
+    
+    color: var(--playertext);
+    font-size: 16px;
+}
 
+.playercontainer .trackdurationcontrols {
+    display: flex;
+    flex-flow: row nowrap;
+    
+    height: 25%;
+    width: 100%;
+    
+    margin-left: auto;
+    margin-right: auto;
+    gap: .4vw;
+    
+    align-items: center;
+    justify-content: center;
+    
+    text-align: center;
+    
+    color: var(--playertext);
+    font-size: .85vw;
+}
 
+.playercontainer .trackdurationcontrols .bar {
+    width: 60%;
+    
+    margin-left: .1vw;
+}
 
+.playercontainer .trackdurationcontrols .time {
+    width: 15%; 
+    
+    margin-left: -3px;
+}
 
+.playercontainer .trackdurationcontrols input[type="range"] {
+    display: block;
+    
+    width: 100%;
+    
+    margin-left: 0;
+    margin-right: 0;
+    
+    background: transparent;
+    
+    -webkit-appearance: none;
+    appearance: none;
+}
 
+/** Chrome, Safari, Opera, and Edge Chromium Track**/
+.playercontainer .trackdurationcontrols input[type="range"]::-webkit-slider-runnable-track {
+    height: 0.1rem;
+    width: 100%;
+    
+    background: var(--playerbar);
+}
+
+/** Firefox Track**/
+.playercontainer .trackdurationcontrols input[type="range"]::-moz-range-track {
+    height: 0.1rem;
+    width: 100%;
+    
+    background: var(--playerbar);
+}
+
+/** Chrome, Safari, Opera, and Edge Chromium Thumb**/
+.playercontainer .trackdurationcontrols input[type="range"]::-webkit-slider-thumb {
+    height: .5rem;
+    width: .5rem;
+    
+    margin-top: -12px;
+    
+    background-color: var(--playericons);
+    
+    border: .1rem solid var(--playerbar);
+    
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/** Firefox Thumb**/
+.playercontainer .trackdurationcontrols input[type="range"]::-moz-range-thumb {
+    height: .5rem;
+    width: .5rem;
+    
+    background-color: var(--playericons);
+    
+    border: .1rem solid var(--playerbar);
+    border-radius: 0;
+}
+
+.playercontainer .trackcontrols {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    
+    height: 20%;
+    width: inherit;
+    
+    margin-top: -5%;
+    gap: 5px;
+}
+
+.playercontainer .trackcontrols button {
+    background-color: transparent;
+    
+    border: none;
+    
+    color: var(--playericons);
+    font-size: 1.8vw;
+}
+
+.playercontainer .creditstooltip {
+    align-self: flex-end;
+    
+    margin-bottom: -5px;
+    
+    text-align: right;
+    
+    color: var(--playerbar);
+}
+
+/* Tooltip text */
+.playercontainer .creditstooltip .playercredits {
+    position: absolute;
+    visibility: hidden;
+    
+    margin: 18px 0 0 -162px;
+    padding: 2px 0;
+    
+    width: 170px;
+    
+    background-color: var(--playertitlebg);
+    
+    border-radius: 2px;
+    
+    text-align: center;
+    
+    color: white;
+    font-size: 10px;
+    
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.playercontainer .creditstooltip:hover .playercredits {
+    visibility: visible;
+}
+
+@media only screen and (max-width: 750px) {
+    .playercontainer .now-playing {
+        font-size: 1.7vw;
+    }
+
+    .playercontainer marquee {
+        font-size: 2.3vw;
+    }
+
+    .playercontainer .trackdurationcontrols {
+        gap: .4vw;
+        
+        font-size: 1.7vw;
+    }
+
+    .playercontainer .trackdurationcontrols .bar {
+        margin-left: .2vw;
+        margin-right: .3vw;
+    }
+
+    .playercontainer .trackdurationcontrols #current-time {
+        margin-left: -2px; 
+    }
+
+    .playercontainer .trackdurationcontrols #duration {
+        margin-left: -3px; 
+    }
+
+    .playercontainer .trackcontrols button {
+        background-color: transparent;
+        
+        border: none;
+        
+        color: var(--playericons);
+        font-size: 4vw;
+    }
+}
 
 /*===============================================
         ------SCROLLBARS STYLING------
@@ -390,35 +711,319 @@ between the sidebars! */
 ::-webkit-scrollbar-button:end:increment,
 ::-webkit-scrollbar-button:start:decrement {
     display: block;
-    width: 16px;
+    
     height: 16px;
+    width: 16px;
+    
     border: 1px solid #000;
 }
  
 ::-webkit-scrollbar-button:vertical:decrement {
+    background: 
+        linear-gradient(
+            #000 9.090909091%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            transparent 0
+        ) 49% 49%/1px 11px no-repeat, 
+        
+        linear-gradient(
+            transparent 9.090909091%,
+            #000 0, 
+            #000 18.181818182%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            transparent 0
+        ) 49% 49%/3px 11px no-repeat, 
+        
+        linear-gradient(
+            transparent 18.181818182%, 
+            #000 0, 
+            #000 27.272727273%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            #000 0, 
+            #000
+        ) 49% 49%/5px 11px no-repeat, 
+        
+        linear-gradient(
+            transparent 27.272727273%,
+            #000 0, 
+            #000 36.363636364%, 
+            #fff 0, 
+            #fff 54.545454545%, 
+            #000 0, 
+            #000
+        ) 49% 49%/7px 11px no-repeat, 
+        
+        linear-gradient(
+            transparent 36.363636364%, 
+            #000 0, 
+            #000 45.454545455%, 
+            #fff 0, 
+            #fff 54.545454545%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 49% 49%/9px 11px no-repeat, 
+        
+        linear-gradient(
+            transparent 45.454545455%, 
+            #000 0,
+            #000 63.636363636%, 
+            transparent 0
+        ) 49% 49%/11px 11px no-repeat, 
+        
+        linear-gradient(
+            transparent 54.545454545%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 49% 49%/13px 11px no-repeat, 
+        #fff;
+    
     border-top: 1px solid #000;
-    background: linear-gradient(#000 9.090909091%, #fff 0, #fff 90.909090909%, transparent 0) 49% 49%/1px 11px no-repeat, linear-gradient(transparent 9.090909091%, #000 0, #000 18.181818182%, #fff 0, #fff 90.909090909%, transparent 0) 49% 49%/3px 11px no-repeat, linear-gradient(transparent 18.181818182%, #000 0, #000 27.272727273%, #fff 0, #fff 90.909090909%, #000 0, #000) 49% 49%/5px 11px no-repeat, linear-gradient(transparent 27.272727273%, #000 0, #000 36.363636364%, #fff 0, #fff 54.545454545%, #000 0, #000) 49% 49%/7px 11px no-repeat, linear-gradient(transparent 36.363636364%, #000 0, #000 45.454545455%, #fff 0, #fff 54.545454545%, #000 0, #000 63.636363636%, transparent 0) 49% 49%/9px 11px no-repeat, linear-gradient(transparent 45.454545455%, #000 0, #000 63.636363636%, transparent 0) 49% 49%/11px 11px no-repeat, linear-gradient(transparent 54.545454545%, #000 0, #000 63.636363636%, transparent 0) 49% 49%/13px 11px no-repeat, #fff;
 }
  
 ::-webkit-scrollbar-button:vertical:increment {
-    border-bottom: 1px solid #000;
-    background: linear-gradient(0deg, #000 9.090909091%, #fff 0, #fff 90.909090909%, transparent 0) 49% 51%/1px 11px no-repeat, linear-gradient(0deg, transparent 9.090909091%, #000 0, #000 18.181818182%, #fff 0, #fff 90.909090909%, transparent 0) 49% 51%/3px 11px no-repeat, linear-gradient(0deg, transparent 18.181818182%, #000 0, #000 27.272727273%, #fff 0, #fff 90.909090909%, #000 0, #000) 49% 51%/5px 11px no-repeat, linear-gradient(0deg, transparent 27.272727273%, #000 0, #000 36.363636364%, #fff 0, #fff 54.545454545%, #000 0, #000) 49% 51%/7px 11px no-repeat, linear-gradient(0deg, transparent 36.363636364%, #000 0, #000 45.454545455%, #fff 0, #fff 54.545454545%, #000 0, #000 63.636363636%, transparent 0) 49% 51%/9px 11px no-repeat, linear-gradient(0deg, transparent 45.454545455%, #000 0, #000 63.636363636%, transparent 0) 49% 51%/11px 11px no-repeat, linear-gradient(0deg, transparent 54.545454545%, #000 0, #000 63.636363636%, transparent 0) 49% 51%/13px 11px no-repeat, #fff;
     height: 15px;
+    
+    background: 
+        linear-gradient(
+            0deg, 
+            #000 9.090909091%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            transparent 0
+        ) 49% 51%/1px 11px no-repeat, 
+        
+        linear-gradient(
+            0deg, 
+            transparent 9.090909091%, 
+            #000 0, 
+            #000 18.181818182%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            transparent 0
+        ) 49% 51%/3px 11px no-repeat, 
+        
+        linear-gradient(
+            0deg, 
+            transparent 18.181818182%, 
+            #000 0, 
+            #000 27.272727273%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            #000 0, 
+            #000
+        ) 49% 51%/5px 11px no-repeat, 
+        
+        linear-gradient(
+            0deg, 
+            transparent 27.272727273%, 
+            #000 0, 
+            #000 36.363636364%, 
+            #fff 0, 
+            #fff 54.545454545%, 
+            #000 0, 
+            #000
+        ) 49% 51%/7px 11px no-repeat, 
+        
+        linear-gradient(
+            0deg, 
+            transparent 36.363636364%, 
+            #000 0, 
+            #000 45.454545455%, 
+            #fff 0, 
+            #fff 54.545454545%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 49% 51%/9px 11px no-repeat, 
+        
+        linear-gradient(
+            0deg, 
+            transparent 45.454545455%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 49% 51%/11px 11px no-repeat, 
+        
+        linear-gradient(
+            0deg, 
+            transparent 54.545454545%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 49% 51%/13px 11px no-repeat, 
+        #fff;
+    
+    border-bottom: 1px solid #000;
     border-bottom: none;
 }
  
 ::-webkit-scrollbar-button:horizontal:decrement {
-    background: linear-gradient(90deg, #000 9.090909091%, #fff 0, #fff 90.909090909%, transparent 0) 49% 49%/11px 1px no-repeat, linear-gradient(90deg, transparent 9.090909091%, #000 0, #000 18.181818182%, #fff 0, #fff 90.909090909%, transparent 0) 49% 49%/11px 3px no-repeat, linear-gradient(90deg, transparent 18.181818182%, #000 0, #000 27.272727273%, #fff 0, #fff 90.909090909%, #000 0, #000) 49% 49%/11px 5px no-repeat, linear-gradient(90deg, transparent 27.272727273%, #000 0, #000 36.363636364%, #fff 0, #fff 54.545454545%, #000 0, #000) 49% 49%/11px 7px no-repeat, linear-gradient(90deg, transparent 36.363636364%, #000 0, #000 45.454545455%, #fff 0, #fff 54.545454545%, #000 0, #000 63.636363636%, transparent 0) 49% 49%/11px 9px no-repeat, linear-gradient(90deg, transparent 45.454545455%, #000 0, #000 63.636363636%, transparent 0) 49% 49%/11px 11px no-repeat, linear-gradient(90deg, transparent 54.545454545%, #000 0, #000 63.636363636%, transparent 0) 49% 49%/11px 13px no-repeat, #fff;
+    background: 
+        linear-gradient(
+            90deg, 
+            #000 9.090909091%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            transparent 0
+        ) 49% 49%/11px 1px no-repeat, 
+        
+        linear-gradient(
+            90deg, 
+            transparent 9.090909091%, 
+            #000 0, 
+            #000 18.181818182%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            transparent 0
+        ) 49% 49%/11px 3px no-repeat, 
+        
+        linear-gradient(
+            90deg, 
+            transparent 18.181818182%, 
+            #000 0, 
+            #000 27.272727273%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            #000 0, 
+            #000
+        ) 49% 49%/11px 5px no-repeat,
+        
+        linear-gradient(
+            90deg, 
+            transparent 27.272727273%, 
+            #000 0, 
+            #000 36.363636364%, 
+            #fff 0, 
+            #fff 54.545454545%, 
+            #000 0, 
+            #000
+        ) 49% 49%/11px 7px no-repeat, 
+        
+        linear-gradient(
+            90deg, 
+            transparent 36.363636364%, 
+            #000 0, 
+            #000 45.454545455%, 
+            #fff 0, 
+            #fff 54.545454545%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 49% 49%/11px 9px no-repeat, 
+        
+        linear-gradient(
+            90deg, 
+            transparent 45.454545455%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 49% 49%/11px 11px no-repeat, 
+        
+        linear-gradient(
+            90deg, 
+            transparent 54.545454545%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 49% 49%/11px 13px no-repeat, 
+        #fff;
 }
  
 ::-webkit-scrollbar-button:horizontal:increment {
-    background: linear-gradient(270deg, #000 9.090909091%, #fff 0, #fff 90.909090909%, transparent 0) 51% 49%/11px 1px no-repeat, linear-gradient(270deg, transparent 9.090909091%, #000 0, #000 18.181818182%, #fff 0, #fff 90.909090909%, transparent 0) 51% 49%/11px 3px no-repeat, linear-gradient(270deg, transparent 18.181818182%, #000 0, #000 27.272727273%, #fff 0, #fff 90.909090909%, #000 0, #000) 51% 49%/11px 5px no-repeat, linear-gradient(270deg, transparent 27.272727273%, #000 0, #000 36.363636364%, #fff 0, #fff 54.545454545%, #000 0, #000) 51% 49%/11px 7px no-repeat, linear-gradient(270deg, transparent 36.363636364%, #000 0, #000 45.454545455%, #fff 0, #fff 54.545454545%, #000 0, #000 63.636363636%, transparent 0) 51% 49%/11px 9px no-repeat, linear-gradient(270deg, transparent 45.454545455%, #000 0, #000 63.636363636%, transparent 0) 51% 49%/11px 11px no-repeat, linear-gradient(270deg, transparent 54.545454545%, #000 0, #000 63.636363636%, transparent 0) 51% 49%/11px 13px no-repeat, #fff;
     width: 15px;
+    
+    background: 
+        linear-gradient(
+            270deg, 
+            #000 9.090909091%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            transparent 0
+        ) 51% 49%/11px 1px no-repeat, 
+        
+        linear-gradient(
+            270deg, 
+            transparent 9.090909091%, 
+            #000 0, 
+            #000 18.181818182%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            transparent 0
+        ) 51% 49%/11px 3px no-repeat, 
+        
+        linear-gradient(
+            270deg, 
+            transparent 18.181818182%, 
+            #000 0, 
+            #000 27.272727273%, 
+            #fff 0, 
+            #fff 90.909090909%, 
+            #000 0, 
+            #000
+        ) 51% 49%/11px 5px no-repeat, 
+        
+        linear-gradient(
+            270deg, 
+            transparent 27.272727273%, 
+            #000 0, 
+            #000 36.363636364%, 
+            #fff 0, 
+            #fff 54.545454545%, 
+            #000 0, 
+            #000
+        ) 51% 49%/11px 7px no-repeat, 
+        
+        linear-gradient(
+            270deg, 
+            transparent 36.363636364%, 
+            #000 0, 
+            #000 45.454545455%, 
+            #fff 0, 
+            #fff 54.545454545%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 51% 49%/11px 9px no-repeat, 
+        
+        linear-gradient(
+            270deg, 
+            transparent 45.454545455%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 51% 49%/11px 11px no-repeat, 
+        
+        linear-gradient(
+            270deg, 
+            transparent 54.545454545%, 
+            #000 0, 
+            #000 63.636363636%, 
+            transparent 0
+        ) 51% 49%/11px 13px no-repeat, 
+    #fff;
+    
     border-right: none;
 }
  
 ::-webkit-scrollbar-track {
-    background: radial-gradient(circle at .5px .5px, #000 .5px, transparent 0) 0/4px 2px repeat, radial-gradient(circle at 2.5px 1.5px, #000 .5px, transparent 0) 0/4px 2px repeat, #fff;
+    background: 
+        radial-gradient(
+            circle at .5px .5px, 
+            #000 .5px, 
+            transparent 0
+        ) 0/4px 2px repeat, 
+        
+        radial-gradient(
+            circle at 2.5px 1.5px, 
+            #000 .5px, 
+            transparent 0
+        ) 0/4px 2px repeat, 
+        #fff;
 }
  
 ::-webkit-scrollbar-track:vertical {
@@ -432,8 +1037,10 @@ between the sidebars! */
 }
  
 ::-webkit-scrollbar-thumb {
-    background-color: #fff;
     width: 14px;
+    
+    background-color: #fff;
+    
     border: 1px solid #000;
 }
  
@@ -441,239 +1048,3 @@ between the sidebars! */
     border-top: 1px solid #000;
     border-left: 1px solid #000;
 }
-
-/*===============================================
-        ------WEBAMP STYLING------
-================================================*/
-
-.playercontainer {
-display: flex;
-flex-flow: column nowrap;
-width: 100%;
-height: 250px;
-background-color: var(--playerbg);
-border: 3px outset var(--playerborder);
-padding: 5px;
-align-content: center;
-align-items: center;
-}
-
-.playercontainer button {
-    text-shadow: -2px 0 #F7FBCE, 0 2px #F7FBCE, 2px 0 #F7FBCE, 0 -2px #F7FBCE;
-}
-
-.playercontainer .now-playing {
-width: 100%;
-height: 15%;
-color: var(--playertext);
-text-align: center;
-text-justify: center;
-font-size: 12px;;
-}
-
-.playercontainer marquee {
-width: 70%;
-height: 35%;
-border: 3px inset var(--playerborder);
-background-color: var(--playertitlebg);
-color: var(--playertext);
-text-align: center;
-font-size: 16px;
-}
-
-.playercontainer .trackdurationcontrols {
-width: 100%;
-height: 25%;
-display: flex;
-flex-flow: row nowrap;
-align-items: center;
-justify-content: center;
-text-align: center;
-margin-left: auto;
-margin-right: auto;
-gap: .4vw;
-font-size: .85vw;
-color: var(--playertext);
-}
-
-.playercontainer .trackdurationcontrols .bar {
-width: 60%;
-margin-left: .1vw;
-}
-
-.playercontainer .trackdurationcontrols .time {
-width: 15%; 
-}
-
-.playercontainer .trackdurationcontrols #current-time {
-margin-left: -3px; 
-}
-
-.playercontainer .trackdurationcontrols #duration {
-margin-left: -3px; 
-}
-
-.playercontainer .trackdurationcontrols input[type="range"] {
--webkit-appearance: none;
-background: transparent;
-display: block;
-margin-left: 0;
-margin-right: 0;
-width: 100%;
-}
-
-/** Chrome, Safari, Opera, and Edge Chromium Track**/
-.playercontainer .trackdurationcontrols input[type="range"]::-webkit-slider-runnable-track {
-background: var(--playerbar);
-height: 0.1rem;
-width: 100%;
-}
-
-/** Firefox Track**/
-.playercontainer .trackdurationcontrols input[type="range"]::-moz-range-track {
-background: var(--playerbar);
-height: 0.1rem;
-width: 100%;
-}
-
-/** Chrome, Safari, Opera, and Edge Chromium Thumb**/
-.playercontainer .trackdurationcontrols input[type="range"]::-webkit-slider-thumb {
--webkit-appearance: none;
-border: .1rem solid var(--playerbar);
-appearance: none;
-margin-top: -12px;
-background-color: var(--playericons);
-height: .5rem;
-width: .5rem;
-}
-
-/** Firefox Thumb**/
-.playercontainer .trackdurationcontrols input[type="range"]::-moz-range-thumb {
-border: .1rem solid var(--playerbar);
-border-radius: 0;
-background-color: var(--playericons);
-height: .5rem;
-width: .5rem;
-}
-
-.playercontainer .trackcontrols {
-width: inherit;
-height: 20%;
-display: flex;
-flex-flow: row nowrap;
-justify-content: center;
-gap: 5px;
-margin-top: -5%;
-}
-
-.playercontainer .trackcontrols button {
-color: var(--playericons);
-font-size: 1.8vw;
-background-color: transparent;
-border: none;
-}
-
-.playercontainer .creditstooltip {
-color: var(--playerbar);
-text-align: right;
-align-self: flex-end;
-margin-bottom: -5px;
-}
-
-/* Tooltip text */
-.playercontainer .creditstooltip .playercredits {
-visibility: hidden;
-width: 170px;
-font-size: 10px;
-background-color: var(--playertitlebg);
-color: white;
-text-align: center;
-padding: 2px 0;
-border-radius: 2px;
-margin: 18px 0 0 -162px;
-position: absolute;
-z-index: 1;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.playercontainer .creditstooltip:hover .playercredits {
-visibility: visible;
-}
-
-@media only screen and (max-width: 750px) {
-    .playercontainer .now-playing {
-    font-size: 1.7vw;
-    }
-
-    .playercontainer marquee {
-    font-size: 2.3vw;
-    }
-
-    .playercontainer .trackdurationcontrols {
-    gap: .4vw;
-    font-size: 1.7vw;
-    }
-
-    .playercontainer .trackdurationcontrols .bar {
-    margin-left: .2vw;
-    margin-right: .3vw;
-    }
-
-    .playercontainer .trackdurationcontrols #current-time {
-    margin-left: -2px; 
-    }
-
-    .playercontainer .trackdurationcontrols #duration {
-    margin-left: -3px; 
-    }
-
-    .playercontainer .trackcontrols button {
-    color: var(--playericons);
-    font-size: 4vw;
-    background-color: transparent;
-    border: none;
-    }
-}
-
-
-/*===============================================
-        ------RESPONSIVE STYLING------
-================================================*/
-
-@media only screen and (max-width: 1100px) {
-    #flex {
-        flex-wrap: wrap;
-    }
-
-    aside {
-        width: 100%;
-    }
-
-    /* the order of the items is adjusted here for responsiveness!
-since the sidebars would be too small on a mobile device.
-feel free to play around with the order!
-*/
-    #container {
-        grid-template-rows: 100px 60px 105px 5fr;
-        grid-template-columns:100%;
-    }
-    #main-div {
-        grid-column-start: 1;
-        grid-row-start: 4;
-    }
-
-    #navbar {
-        grid-column-start: 1;
-        grid-row-start: 3;
-    }
-
-    #sidebar1 {
-        grid-column-start: 1;
-        grid-row-start: 3;
-    }
-
-    #header-img {
-        object-fit: contain;
-    }
-}
-
