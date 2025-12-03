@@ -324,6 +324,16 @@ main {
 }
 
 /*-------------MAIN CONTENT STYLES-------------*/
+#welcome {
+    margin: 15px;
+    
+    text-align: center;
+}
+
+#welcome h1 {
+    font-size: 3em;
+}
+
 #post-divider {
     height:30px;
     
