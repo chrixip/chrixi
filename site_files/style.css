@@ -42,6 +42,11 @@
     --playericons: #81892B;
 }
 
+@font-face {
+    font-family: 'Resistance générale';
+    src: url("assets/fonts/Resistance\ générale.otf") format("truetype");
+}
+
 /*Applies CRT effect on page */
 .crt::before {
     content: " ";
@@ -174,6 +179,8 @@ button:hover {
 /*-------------TEXT STYLES-------------*/
 h1 {
     font-size: 25px;
+    
+    font-family: 'Resistance générale', cursive;
     color: var(--h1-text-color);
 }
 
