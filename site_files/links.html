@@ -1,33 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html class="crt">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>welcome to the bog...</title>
 		<meta name="description" content="mine own site">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel = "stylesheet" type = "text/css" href = "style.css" />
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+        <title>welcome to the bog...</title>
+        
+        <link rel="icon" type="image/x-icon" href="assets/froggie.webp" />
+        <link rel = "stylesheet" type = "text/css" href = "style.css" />
         <link href="./feed.xml" rel="alternate" type="application/rss+xml" title="chrixi's weekly roundup">
-	</head>
+	
+    </head>
+
     <body>
-        <div id="container">
-            <div id="topBar">
-                <marquee>
-                    welcome to my website
-                </marquee>
-            </div>
-            <div id="headerArea">
-                <div id="header" style="height: 101px;">
-                </div>
+        <div id="container" style="display: grid; grid-template-areas: 'header' 'header-divider' 'navbar' 'main'">
+            
+            <div id="header"></div>
+            
+            <div id="header-divider"></div>
+            
+            <div id="navbar" class="div-bg">
                 
-                <nav id="navbar" style="margin-bottom: 10px;">
-                </nav>
+                <div id="nav-buttons" class="section">
+                    <button onclick="window.location.href='./index.html';">Home</button>
+                    <button onclick="window.location.href='./feed.html';">Feed</button>
+                    <button onclick="window.location.href='./archive.html';">Archive</button>
+                    <button onclick="window.location.href='./about.html';">About</button>
+                    <button onclick="window.location.href='./links.html';">Links</button>
+                </div>
             </div>
-            <hr id="post-header" />
-            <div id="flex">
-                <main>
-                    <h1>Collection of Links</h1>
-                    <p>Here's where the links go</p>
+
+            <div class="div-bg">
+                <main class="section">
+                    <div>
+                        <h1>Credits</h1>
+                        <br />
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/aroundyrthroat/music-player/tree/main">music-player</a> by <a href="https://github.com/aroundyrthroat">aroundyrthroat</a> on github</li>
+                            </li>
+                            <li>
+                                moon phase widget courtesy of <a href="https://dimden.dev/moonwidget/">dimden</a>
+                            </li>
+                            <li>
+                                chat box by <a href="https://iframe.chat/">chattable</a>
+                            </li>
+                            <li>
+                                crt effect by <a href="https://aleclownes.com/2017/02/01/crt-display.html">alec lownes</a>
+                            </li>
+                        </ul>
+                    </div>
                 </main>
             </div>
         </div>

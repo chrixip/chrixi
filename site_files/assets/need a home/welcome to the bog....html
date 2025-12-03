@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://127.0.0.1:5500/site_files/links.html -->
+<html class="crt"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="mine own site">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+        <title>welcome to the bog...</title>
+        
+        <link rel="icon" type="image/x-icon" href="http://127.0.0.1:5500/site_files/assets/froggie.webp">
+        <link rel="stylesheet" type="text/css" href="./welcome to the bog..._files/style.css">
+        <link href="http://127.0.0.1:5500/site_files/feed.xml" rel="alternate" type="application/rss+xml" title="chrixi&#39;s weekly roundup">
+	
+    </head>
+
+    <body>
+        <div id="container" style="display: grid; grid-template-areas: &#39;header&#39; &#39;header-divider&#39; &#39;navbar&#39; &#39;main&#39;">
+            
+            <div id="header"></div>
+            
+            <div id="header-divider"></div>
+            
+            <div id="navbar" class="div-bg" style="width:100%;">
+                
+                <div id="nav-buttons" class="section">
+                    <button onclick="window.location.href=&#39;./index.html&#39;;">Home</button>
+                    <button onclick="window.location.href=&#39;./feed.html&#39;;">Feed</button>
+                    <button onclick="window.location.href=&#39;./archive.html&#39;;">Archive</button>
+                    <button onclick="window.location.href=&#39;./about.html&#39;;">About</button>
+                    <button onclick="window.location.href=&#39;./links.html&#39;;">Links</button>
+                </div>
+            </div>
+
+            <div class="div-bg">
+                <main class="section">
+                    <div>
+                        <h1>Credits</h1>
+                        <br>
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/aroundyrthroat/music-player/tree/main">music-player</a> by <a href="https://github.com/aroundyrthroat">aroundyrthroat</a> on github</li>
+                            
+                            <li>
+                                moon phase widget courtesy of <a href="https://dimden.dev/moonwidget/">dimden</a>
+                            </li>
+                            <li>
+                                chat box by <a href="https://iframe.chat/">chattable</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script src="./welcome to the bog..._files/script.js"></script>
+    <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
