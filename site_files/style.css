@@ -69,7 +69,7 @@
     background-size: 100% 2px, 3px 100%;
     pointer-events: none;
 
-    z-index: 2;
+    z-index: 200;
 }
 
 * {
@@ -312,7 +312,7 @@ main {
 
 /*-------------CONTAINER STYLES-------------*/
 #container {
-    max-width: 2000px;
+    max-width: 1950px;
     height: 93vh;
     
     margin: 5px auto;
@@ -322,6 +322,8 @@ main {
     
     border: 9px ridge var(--container-border-color);
     border-radius: 15px;
+
+    z-index: 100;
 }
 
 /*-------------HEADER STYLES-------------*/
@@ -455,6 +457,12 @@ main {
 /*===============================================
         ------RESPONSIVE STYLING------
 ================================================*/
+
+/*-------------WEBAMP STYLING FOR SMALLER SCREENS-------------*/
+
+
+
+/*-------------MEDIA QUERY FOR SMALLER SCREENS-------------*/
 
 @media only screen and (max-width: 1250px) {
     
