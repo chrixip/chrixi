@@ -646,7 +646,7 @@ main {
     text-align: center;
     
     color: var(--playertext);
-    font-size: 1.6vw;
+    font-size: min(24pt, 14pt);
 }
 
 .playercontainer .trackdurationcontrols .bar {
@@ -735,7 +735,7 @@ main {
     border: none;
     
     color: var(--playericons);
-    font-size: 1.8vw;
+    font-size: max(14px, 1.8vw);
 }
 
 .playercontainer .creditstooltip {
