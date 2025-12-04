@@ -322,8 +322,6 @@ main {
     
     border: 9px ridge var(--container-border-color);
     border-radius: 15px;
-
-    z-index: 100;
 }
 
 /*-------------HEADER STYLES-------------*/
