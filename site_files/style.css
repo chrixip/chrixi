@@ -281,7 +281,7 @@ main {
     display:grid;
     
     grid-template-columns: 1fr auto;
-    grid-template-rows: 100px auto;
+    grid-template-rows: 100px 180px auto;
     grid-template-areas:
         'welcome player empty1 empty1'
         'about player empty1 empty1'
@@ -477,7 +477,7 @@ main {
 @media only screen and (max-width: 1422px) {
     
     main {
-        grid-template-rows: 100px 180px auto;
+        grid-template-rows: 100px auto;
         grid-template-areas:
             'welcome post post post'
             'about post post post'
