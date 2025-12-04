@@ -4,17 +4,19 @@
 
 :root {
     /* Assets */
-    --background-img: url("assets/flowers.jpg");
+    --background-img: url("assets/backgrounds/flowers.jpg");
     
-    --container-bg-img: url("assets/stripe.png");
-    --div-bg-img: url("assets/misc071.gif");
-    --scallop-border-img: url("assets/scallop_border.png");
+    --container-bg-img: url("assets/backgrounds/stripe.png");
+    --div-bg-img: url("assets/backgrounds/misc071.gif");
+    --scallop-border-img: url("assets/backgrounds/scallop_border.png");
     
-    --header-img: url("assets/chrixi is online.gif");
-    --header-divider-img: url("assets/fence2.gif");
-    --footer-divider-img: url("assets/train_divider.gif");
+    --header-img: url("assets/header images/chrixi is online.gif");
+    --header-divider-img: url("assets/dividers/fence2.gif");
+    --footer-divider-img: url("assets/dividers/train_divider.gif");
 
-    --strawberry-divider-img: url("assets/strawberry_divider.png");
+    --about-divider-img: url("assets/dividers/scribbleanimals.gif");
+    --subscribe-divider-img: url("assets/dividers/jump_rope.gif");
+    --latest-post-divider-img: url("assets/dividers/ocean.gif");
     
     /* Theme Colors */
     --container-border-color: #77FA57;
@@ -213,6 +215,7 @@ h3 {
 
 p, 
 marquee, 
+li,
 .now-playing, 
 .trackdurationcontrols {
     font-family: "Jersey 20", sans-serif;
@@ -278,7 +281,7 @@ main {
     display:grid;
     
     grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-template-rows: 100px auto;
     grid-template-areas:
         'welcome post post post'
         'about post post post'
@@ -379,10 +382,30 @@ main {
     color: var(--title-text-color);
 }
 
-#post-divider {
-    height:30px;
+#about hr {
+    height: 30px;
     
-    background-image: var(--strawberry-divider-img);
+    background-image: var(--about-divider-img);
+    background-repeat: repeat-x;
+    background-position-x: center;
+
+    border: none;
+}
+
+#subscribe hr {
+    height: 35px;
+    
+    background-image: var(--subscribe-divider-img);
+    background-repeat: repeat-x;
+    background-position-x: center;
+
+    border: none;
+}
+
+#post-divider {
+    height:35px;
+    
+    background-image: var(--latest-post-divider-img);
     background-repeat:repeat-x;
     background-position-x: center;
     
@@ -435,7 +458,7 @@ main {
     
     :root {
         /* Assets */
-        --header-img: url("assets/chrixi is online small.gif");
+        --header-img: url("assets/header images/chrixi is online small.gif");
     }
 
     /*-------------TYPE-SPECIFIC STYLES-------------*/
