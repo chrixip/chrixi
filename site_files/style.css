@@ -281,7 +281,7 @@ main {
     display:grid;
     
     grid-template-columns: 1fr auto;
-    grid-template-rows: 100px 180px auto;
+    grid-template-rows: 100px 190px auto;
     grid-template-areas:
         'welcome player empty1 empty1'
         'about player empty1 empty1'
@@ -474,7 +474,7 @@ main {
 ================================================*/
 
 /*-------------WEBAMP STYLING FOR SMALLER SCREENS-------------*/
-@media only screen and (max-width: 1422px) {
+@media only screen and (max-width: 1440px) {
     
     main {
         grid-template-rows: 100px auto;
