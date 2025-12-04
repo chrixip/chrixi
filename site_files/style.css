@@ -280,7 +280,7 @@ a {
 main {
     display:grid;
     
-    grid-template-columns: auto;
+    grid-template-columns: 1fr auto;
     grid-template-rows: 100px auto;
     grid-template-areas:
         'welcome post post post'
@@ -456,7 +456,7 @@ main {
         ------RESPONSIVE STYLING------
 ================================================*/
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1250px) {
     
     :root {
         /* Assets */
@@ -518,7 +518,6 @@ main {
         grid-template-columns:100%;
         grid-template-areas:
             "header"
-            "header-divider"
             "navbar"
             "main-div";
         grid-gap: 3px;
@@ -613,6 +612,9 @@ main {
 }
 
 .playercontainer marquee {
+    display: inline-flex;
+    flex-direction: column;
+    
     height: 35%;
     width: 70%;
     
@@ -620,6 +622,7 @@ main {
     
     border: 3px inset var(--playerborder);
     
+    justify-content: center;
     text-align: center;
     
     color: var(--playertext);
