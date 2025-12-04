@@ -403,7 +403,9 @@ main {
 }
 
 #post-divider {
-    height:35px;
+    margin-top: 10px;
+    
+    height:30px;
     
     background-image: var(--latest-post-divider-img);
     background-repeat:repeat-x;
