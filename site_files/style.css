@@ -19,14 +19,16 @@
     /* Theme Colors */
     --container-border-color: #77FA57;
     --div-border-color: #91581C;
-    --content-bg-color: #F8F9F9;
+    --content-bg-color: #edf0f0;
     
     --footer-bg-color: #6B3F23;
     --moon-phase-bg-color: #99B7B2;
     
     --title-text-color: #005757;
-    --h1-text-color: #3D087F;
-    --header-text-color: #8E8DB5;
+    --h1-text-color: #005721;
+    --h2-text-color: rgba(0, 89, 255, 0.596);
+    --h3-text-color: rgba(1, 34, 97, 0.596);
+    --paragraph-text-color: rgb(0, 0, 0);
 
     /* Button Colors */
     --button-bg-color: #AC93B3;
@@ -40,11 +42,6 @@
     --playertitlebg: #F7FBCE;
     --playerbar: #A7AE55;
     --playericons: #81892B;
-}
-
-@font-face {
-    font-family: 'Resistance générale';
-    src: url("assets/fonts/Resistance\ générale.otf") format("truetype");
 }
 
 /*Applies CRT effect on page */
@@ -128,9 +125,9 @@ body > * {
 
 .content {
     margin: 5px;
-    padding:20px;
+    padding: 15px;
     
-    background: var(--content-bg);
+    background: var(--content-bg-color);
     
     border: 1px solid darkgray;
     border-radius: 2px;
@@ -139,10 +136,6 @@ body > * {
         inset -13px 0px 6px -10px rgb(66 66 66 / 56%), 
         inset 0px 13px 6px -10px #ffffff, 
         inset 0px -13px 6px -10px rgb(66 66 66 / 38%);
-}
-
-.content h1{
-    text-align: left;
 }
 
 /*===============================================
@@ -178,15 +171,53 @@ button:hover {
 
 /*-------------TEXT STYLES-------------*/
 h1 {
-    font-size: 25px;
+    text-align: center;
     
-    font-family: 'Resistance générale', cursive;
+    font-family: "Tourney", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 36pt;
+    
     color: var(--h1-text-color);
 }
 
-h2,
+h2 {
+    font-family: "Sixtyfour", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "BLED" 15,
+        "SCAN" 40;
+    
+    color: var(--h2-text-color);
+}
+
 h3 {
-    color: var(--header-text-color);
+    font-family: "Sixtyfour", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "BLED" 15,
+        "SCAN" 40;
+    
+    color: var(--h3-text-color);
+}
+
+p, 
+marquee, 
+.now-playing, 
+.trackdurationcontrols {
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13pt;
+
+    color: var(--paragraph-text-color);
 }
 
 
@@ -427,7 +458,7 @@ main {
         margin: 5px;
         padding:10px;
         
-        background: var(--content-bg);
+        background: var(--content-bg-color);
         
         border: 1px solid darkgray;
         border-radius: 2px;
@@ -551,9 +582,6 @@ main {
     color: var(--playertext);
     
     text-align: center;
-    text-justify: center;
-    
-    font-size: 12px;
 }
 
 .playercontainer marquee {
@@ -587,7 +615,7 @@ main {
     text-align: center;
     
     color: var(--playertext);
-    font-size: .85vw;
+    font-size: 1.6vw;
 }
 
 .playercontainer .trackdurationcontrols .bar {
