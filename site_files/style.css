@@ -181,6 +181,7 @@ h1 {
         "wdth" 100;
     font-size: 36pt;
     
+    text-shadow:#51ff007c 4px 1px 4px;
     color: var(--h1-text-color);
 }
 
@@ -190,9 +191,10 @@ h2 {
     font-weight: 400;
     font-style: normal;
     font-variation-settings:
-        "BLED" 15,
+        "BLED" 25,
         "SCAN" 40;
-    
+
+    text-shadow:#ff000038 2px 1px 4px;
     color: var(--h2-text-color);
 }
 
@@ -202,9 +204,10 @@ h3 {
     font-weight: 400;
     font-style: normal;
     font-variation-settings:
-        "BLED" 15,
-        "SCAN" 40;
+        "BLED" 25,
+        "SCAN" 20;
     
+    text-shadow:#00ff803d 1px 1px 1px;
     color: var(--h3-text-color);
 }
 
