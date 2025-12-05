@@ -23,9 +23,9 @@
  * You can also delete the lists that you don't want.
 */
 var myPlaylists = {
-    "90s HITS": 'PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7',
-    "00s HITS": 'PL69714D95619E327E',
-    "VAPORWAVE": 'PLSChV4T8EDb9TZsLO23Tsj6-UUyAXtGg5',
+    "ALBUM OF THE WEEK": 'PLN3HOJ-INNEKAox1k-Q6JFIKFLr1xs4s5',
+    "HYPER": 'PLWsidoFmNk8yk41oPD6-X10oIgHbKADVa',
+    "JAZZ": 'PLWsidoFmNk8wLUaoHNiCmD2OE971nBu0x',
     //"ANOTHER PLAYLIST": 'PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7',
 };
 
@@ -35,7 +35,7 @@ var myPlaylists = {
  * The first playlist that the player will load on startup. You may change it by
  * writing the name of the new playlist below.
 */
-var currentPlaylist = "90s HITS";
+var currentPlaylist = "ALBUM OTW";
 
 
 /**
