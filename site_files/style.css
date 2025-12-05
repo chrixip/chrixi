@@ -7,7 +7,7 @@
     --background-img: url("assets/backgrounds/flowers.jpg");
     
     --container-bg-img: url("assets/backgrounds/stripe.png");
-    --div-bg-img: url("assets/backgrounds/misc071.gif");
+    --div-bg-img: url("assets/backgrounds/old-mathematics.png");
     --scallop-border-img: url("assets/backgrounds/scallop_border.png");
     
     --header-img: url("assets/header images/chrixi is online.gif");
@@ -21,8 +21,10 @@
     /* Theme Colors */
     --container-border-color: #77FA57;
     --div-border-color: #91581C;
-    --content-bg-color: #edf0f0;
+    --content-bg-color: #e0e4f5;
+    --div-bg-color: #ffffff;
     
+    --iframe-border-color: #073fda;
     --footer-bg-color: #6B3F23;
     --moon-phase-bg-color: #99B7B2;
     
@@ -102,6 +104,8 @@ body > * {
     background-image: var(--div-bg-img);
     background-repeat: repeat;
     
+    background-color: var(--div-bg-color);
+    
     border: 6px ridge var(--div-border-color);
     border-radius: 9px;
     
@@ -109,9 +113,10 @@ body > * {
 }
 
 .section {
-    margin: 10px;
+    margin: 7px;
+    padding: 5px;
 
-    border-image: var(--scallop-border-img) 9 fill round;
+    border-image: var(--scallop-border-img) 12 fill round;
     border-width: 12px;
     border-style: solid;
 }
@@ -123,15 +128,14 @@ body > * {
     
     background: var(--content-bg-color);
     
-    border: 1px solid darkgray;
-    border-radius: 2px;
+    border-radius: 5px;
     box-shadow: 
-        inset 13px 0px 6px -10px rgb(66 66 66 / 20%), 
+        inset 13px 0px 6px -10px rgb(255, 255, 255), 
         inset -13px 0px 6px -10px rgb(66 66 66 / 56%), 
         inset 0px 13px 6px -10px #ffffff, 
-        inset 0px -13px 6px -10px rgb(66 66 66 / 38%);
+        inset 0px -13px 6px -10px rgb(66 66 66 / 38%),
+        5px 5px 6px -2px #373ace5b;
 }
-
 /*===============================================
         ------ TAG-SPECIFIC LAYOUT ------
 ================================================*/
@@ -149,6 +153,9 @@ button {
 
     border:2px outset var(--button-border-color);
     border-radius:10px;
+
+    box-shadow:
+        5px 5px 6px -3.5px #0e1ead9a;
     
     color:white;
     text-align:center;
@@ -180,6 +187,8 @@ h1 {
 }
 
 h2 {
+    text-align: center;
+    
     font-family: "Sixtyfour", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -216,6 +225,9 @@ li {
     color: var(--paragraph-text-color);
 }
 
+iframe {
+    border-radius: 8px;
+}
 
 strong {
     color: var(--bold-text-color);
@@ -234,7 +246,7 @@ a {
     
     grid-template-columns: auto;
     grid-template-rows: auto auto auto 5fr;
-    grid-gap: 5px;
+    grid-gap: 10px;
     
     grid-template-areas:
         "header header"
@@ -464,7 +476,7 @@ main {
 ================================================*/
 
 /*-------------WEBAMP STYLING FOR SMALLER SCREENS-------------*/
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1462px) {
     
     main {
         grid-template-rows: 100px auto;
