@@ -49,9 +49,8 @@ var currentPlaylist = "90s HITS";
 var myThemes = {
     "DEFAULT": 'default',
     "SILVER": 'silver',
-    "VIOLET": "violet",
     "MINIMAL": "minimal",
-    "RED GRUNGE": "red-grunge",
+    "CHRIXI THEME": "chrixi-theme"
     //"ANOTHER THEME": 'another-theme',
 };
 
@@ -60,7 +59,7 @@ var myThemes = {
  * [4. CURRENT THEME]
  * Set the theme of your player writing its name below.
  */
-var currentTheme = "SILVER";
+var currentTheme = "CHRIXI THEME";
 
 
 // ===== END OF CONFIGURATION =====
@@ -90,7 +89,12 @@ var videoButton = document.getElementById("videoButton");
 var isVideoShowing = true;
 
 var logo = document.getElementById("playerLogo");
-logo.innerHTML = "<img src='./themes/" + myThemes[currentTheme] + "/logo.png' alt=''>";
+if(currentTheme == "CHRIXI THEME"){
+    logo.innerHTML = "<img src='./themes/" + myThemes[currentTheme] + "/logo.gif' alt=''>";
+}
+else{
+    logo.innerHTML = "<img src='./themes/" + myThemes[currentTheme] + "/logo.png' alt=''>";
+}
 
 var seekBar = document.getElementById("seekBar");
 var isSlidingSeekBar = false;
