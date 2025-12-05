@@ -291,7 +291,7 @@ main {
     display:grid;
     
     grid-template-columns: 1fr auto;
-    grid-template-rows: 100px 190px auto;
+    grid-template-rows: 100px 200px auto;
     gap: 0px;
 
     grid-template-areas:
@@ -429,8 +429,8 @@ main {
 }
 
 #webdeck-player {
-    height: 280px;
-    width: 630px;
+    height: 290px;
+    width: 640px;
     
     justify-content: center;
 }
