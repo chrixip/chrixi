@@ -8,12 +8,12 @@
     
     --container-bg-img: url("assets/backgrounds/stripe.png");
     --div-bg-img: url("assets/backgrounds/old-mathematics.png");
-    --scallop-border-img: url("assets/backgrounds/scallop_border.png");
-    
+
     --header-img: url("assets/header images/chrixi is online.gif");
     --header-divider-img: url("assets/dividers/fence2.gif");
     --footer-divider-img: url("assets/dividers/train_divider.gif");
 
+    --chat-divider-img: url("assets/dividers/fish.gif");
     --about-divider-img: url("assets/dividers/bubbles.gif");
     --subscribe-divider-img: url("assets/dividers/jump_rope.gif");
     --latest-post-divider-img: url("assets/dividers/scribbleanimals.gif");
@@ -21,6 +21,8 @@
     /* Theme Colors */
     --container-border-color: #77FA57;
     --div-border-color: #91581C;
+    --section-border-color: #ff9845da;
+    
     --content-bg-color: #e0e4f5;
     --div-bg-color: #ffffff;
     
@@ -116,9 +118,8 @@ body > * {
     margin: 7px;
     padding: 5px;
 
-    border-image: var(--scallop-border-img) 12 fill round;
-    border-width: 12px;
-    border-style: solid;
+    border: 6px ridge var(--section-border-color);
+    border-radius: 9px;
 }
 
 
@@ -237,6 +238,13 @@ a {
     color: var(--container-border-color)
 }
 
+hr {
+    background-repeat: repeat-x;
+    background-position-x: center;
+
+    border: none;
+}
+
 /*===============================================
         ------ CONTAINER GRID LAYOUT ------
 ================================================*/
@@ -246,7 +254,7 @@ a {
     
     grid-template-columns: auto;
     grid-template-rows: auto auto auto 5fr;
-    grid-gap: 10px;
+    gap: 10px;
     
     grid-template-areas:
         "header header"
@@ -284,6 +292,8 @@ main {
     
     grid-template-columns: 1fr auto;
     grid-template-rows: 100px 190px auto;
+    gap: 0px;
+
     grid-template-areas:
         'welcome player empty1 empty1'
         'about player empty1 empty1'
@@ -374,6 +384,14 @@ main {
 }
 
 /*-------------SIDEBAR STYLES-------------*/
+#sidebar-box-2 hr {
+    margin-bottom: 10px;
+    
+    height: 40px;
+    
+    background-image: var(--chat-divider-img);
+}
+
 #sidebar-box-3 {
     display: flex;
     
@@ -398,10 +416,6 @@ main {
     height: 30px;
     
     background-image: var(--about-divider-img);
-    background-repeat: repeat-x;
-    background-position-x: center;
-
-    border: none;
 }
 
 #subscribe hr {
