@@ -6,11 +6,11 @@
     /* Assets */
     --background-img: url("assets/backgrounds/crawling.gif");
     
-    --container-bg-img: url("assets/backgrounds/stripe.png");
+    --container-bg-img: url("assets/backgrounds/stars.gif");
     --div-bg-img: url("assets/backgrounds/old-mathematics.png");
 
-    --header-img: url("assets/header images/chrixi is online.gif");
-    --header-divider-img: url("assets/dividers/fence2.gif");
+    --header-img: url("assets/header images/chrixi is online redux.gif");
+    --header-divider-img: url("assets/dividers/cityskyline.png");
     --footer-divider-img: url("assets/dividers/train_divider.gif");
 
     --chat-divider-img: url("assets/dividers/fish.gif");
@@ -19,16 +19,16 @@
     --latest-post-divider-img: url("assets/dividers/scribbleanimals.gif");
     
     /* Theme Colors */
-    --container-border-color: #77FA57;
-    --div-border-color: #91581C;
+    --container-border-color: #1c108b;
+    --div-border-color: #423c34;
     --section-border-color: #ff9845da;
     
-    --content-bg-color: #e0e4f5;
-    --div-bg-color: #ffffff;
+    --content-bg-color: #848bac;
+    --div-bg-color: #44aa445b;
     
     --iframe-border-color: #073fda;
-    --footer-bg-color: #6B3F23;
-    --moon-phase-bg-color: #99B7B2;
+    --footer-bg-color: linear-gradient(0deg,rgba(98, 106, 143, 1) 0%, rgb(43, 43, 136) 90%, rgb(10, 37, 94) 100%);
+    --moon-phase-bg-color: #848bac;
     
     --title-text-color: #005757;
     --h1-text-color: #005721;
@@ -120,8 +120,8 @@ body > * {
     margin: 7px;
     padding: 5px;
 
-    border: 6px ridge var(--section-border-color);
-    border-radius: 9px;
+    /*border: 6px ridge var(--section-border-color);
+    border-radius: 9px;*/
 }
 
 
@@ -282,7 +282,7 @@ hr {
     
     grid-template-columns: auto;
     grid-template-rows: auto auto auto 5fr;
-    gap: 10px;
+    gap: 15px;
     
     grid-template-areas:
         "header header"
@@ -365,8 +365,8 @@ main {
     max-width: 2200px;
     height: 93vh;
     
-    margin: 5px auto;
-    padding: 5px;
+    margin: 15px auto;
+    padding: 20px;
     
     background-image: var(--container-bg-img);
     
@@ -520,7 +520,7 @@ main {
     
     width: 100%;
     
-    background-color: var(--footer-bg-color);
+    background: var(--footer-bg-color);
     
     text-align: center;
 }
