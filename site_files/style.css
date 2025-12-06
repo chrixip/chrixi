@@ -34,7 +34,9 @@
     --h1-text-color: #005721;
     --h2-text-color: rgba(0, 89, 255, 0.596);
     --h3-text-color: rgba(1, 34, 97, 0.596);
+    --h4-text-color: rgb(196, 135, 135);
     --paragraph-text-color: rgb(0, 0, 0);
+    --content-link-text-color: #005721;
 
     /* Button Colors */
     --button-bg-color: #AC93B3;
@@ -137,6 +139,7 @@ body > * {
         inset 0px -13px 6px -10px rgb(66 66 66 / 38%),
         5px 5px 6px -2px #373ace5b;
 }
+
 /*===============================================
         ------ TAG-SPECIFIC LAYOUT ------
 ================================================*/
@@ -215,6 +218,16 @@ h3 {
     color: var(--h3-text-color);
 }
 
+h4 {
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16pt;
+    
+    text-shadow:#00ff803d 1px 1px 1px;
+    color: var(--h4-text-color);
+}
+
 p, 
 marquee, 
 li {
@@ -236,6 +249,21 @@ strong {
 
 a {
     color: var(--container-border-color)
+}
+
+.content a {
+    color: var(--content-link-text-color);
+    text-decoration: underline;
+}
+
+.post h4 {
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16pt;
+    
+    text-shadow:#00ff803d 1px 1px 1px;
+    color: var(--h4-text-color);
 }
 
 hr {
@@ -458,6 +486,31 @@ main {
 
 #newsletter-submit {
     margin-top:10px;
+}
+
+/*-------------POST STYLES-------------*/
+.tooltip {
+    color: var(--content-link-text-color);
+    text-decoration:dotted underline;
+}
+
+.tooltip::after {
+    content:"📖";
+    vertical-align: super;
+    font-size: small; 
+}
+
+.post a::after {
+    content:"🔗";
+    vertical-align: super;
+    font-size: xx-small;
+}
+
+.post .note {
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10pt;
 }
 
 /*-------------FOOTER STYLES-------------*/
