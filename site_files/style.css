@@ -401,6 +401,11 @@ main {
 }
 
 /*-------------MAIN CONTENT STYLES-------------*/
+#webdeck-images {
+    max-height: 0px;
+    max-width: 0px;
+}
+
 #welcome {
     margin: 15px;
     

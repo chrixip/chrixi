@@ -301,6 +301,9 @@ input[type="range"]::-moz-range-thumb:active /* For Firefox */ {
 }
 
 #volumeBar{
+    position: relative;
+    bottom: 5px;
+    
     width: 120px;
 }
 
