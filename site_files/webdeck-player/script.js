@@ -23,10 +23,9 @@
  * You can also delete the lists that you don't want.
 */
 var myPlaylists = {
-    "ALBUM OF THE WEEK": 'PLN3HOJ-INNEKAox1k-Q6JFIKFLr1xs4s5',
+    "ALBUMS OF THE WEEK": 'PLWsidoFmNk8wCHAz2LDttBGFVTUe0EH6l',
     "HYPER": 'PLWsidoFmNk8yk41oPD6-X10oIgHbKADVa',
     "JAZZ": 'PLWsidoFmNk8wLUaoHNiCmD2OE971nBu0x',
-    //"ANOTHER PLAYLIST": 'PLZyqOyXxaVETqpHhT_c5GPmAPzhJpJ5K7',
 };
 
 
@@ -35,7 +34,7 @@ var myPlaylists = {
  * The first playlist that the player will load on startup. You may change it by
  * writing the name of the new playlist below.
 */
-var currentPlaylist = "ALBUM OTW";
+var currentPlaylist = "ALBUMS OF THE WEEK";
 
 
 /**

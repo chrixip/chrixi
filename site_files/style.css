@@ -37,6 +37,7 @@
     --h4-text-color: #005721;
     --paragraph-text-color: rgb(0, 0, 0);
     --content-link-text-color: #005721;
+    --blockquote-color: darkslategray;
 
     /* Button Colors */
     --button-bg-color: #AC93B3;
@@ -77,6 +78,10 @@
     padding: 0;
     
     cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat905.cur), auto !important;
+
+    font-family: "Jersey 20", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 html,
@@ -219,9 +224,6 @@ h3 {
 }
 
 h4 {
-    font-family: "Jersey 20", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     font-size: 16pt;
     
     text-shadow:#00ff803d 1px 1px 1px;
@@ -231,9 +233,6 @@ h4 {
 p, 
 marquee, 
 li {
-    font-family: "Jersey 20", sans-serif;
-    font-weight: 400;
-    font-style: normal;
     font-size: 13pt;
 
     color: var(--paragraph-text-color);
@@ -253,17 +252,7 @@ a {
 
 .content a {
     color: var(--content-link-text-color);
-    text-decoration: underline;
-}
-
-.post h4 {
-    font-family: "Jersey 20", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 16pt;
-    
-    text-shadow:#00ff803d 1px 1px 1px;
-    color: var(--h4-text-color);
+    text-decoration: none;
 }
 
 hr {
@@ -271,6 +260,46 @@ hr {
     background-position-x: center;
 
     border: none;
+}
+
+/*-------------POST STYLES-------------*/
+.tooltip {
+    color: var(--content-link-text-color);
+    text-decoration:dotted underline;
+}
+
+.tooltip::after {
+    content:"📖";
+    vertical-align: super;
+    font-size: small; 
+}
+
+.post h4 {
+    font-style: italic;
+    font-size: 16pt;
+    
+    text-shadow:#00ff803d 1px 1px 1px;
+    color: var(--h4-text-color);
+}
+
+.post blockquote {
+    margin-left: 25px;
+    padding-left: 10px;
+
+    border-left: solid 2px;
+
+    color: var(--blockquote-color);
+}
+
+.post a::after {
+    content:"🔗";
+    vertical-align: super;
+    font-size: xx-small;
+    text-decoration: none;
+}
+
+.post .note {
+    font-size: 10pt;
 }
 
 /*===============================================
@@ -363,7 +392,7 @@ main {
 /*-------------CONTAINER STYLES-------------*/
 #container {
     max-width: 2200px;
-    height: 93vh;
+    height: 91vh;
     
     margin: 15px auto;
     padding: 20px;
@@ -486,31 +515,6 @@ main {
 
 #newsletter-submit {
     margin-top:10px;
-}
-
-/*-------------POST STYLES-------------*/
-.tooltip {
-    color: var(--content-link-text-color);
-    text-decoration:dotted underline;
-}
-
-.tooltip::after {
-    content:"📖";
-    vertical-align: super;
-    font-size: small; 
-}
-
-.post a::after {
-    content:"🔗";
-    vertical-align: super;
-    font-size: xx-small;
-}
-
-.post .note {
-    font-family: "Jersey 20", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 10pt;
 }
 
 /*-------------FOOTER STYLES-------------*/
