@@ -81,7 +81,6 @@
 
     font-family: "Jersey 20", sans-serif;
     font-weight: 400;
-    font-style: normal;
 }
 
 html,
@@ -230,8 +229,7 @@ h4 {
     color: var(--h4-text-color);
 }
 
-p, 
-marquee, 
+p,
 li {
     font-size: 13pt;
 
@@ -300,6 +298,18 @@ hr {
 
 .post .note {
     font-size: 10pt;
+}
+
+.post ol {
+    margin-left: 25px;
+    
+    font-size: 13pt;
+}
+
+.post ul {
+    margin-left: 25px;
+
+    font-size: 13pt;
 }
 
 /*===============================================
@@ -586,7 +596,8 @@ main {
         margin: auto;
     }
 
-    p {
+    p,
+    li {
         font-size: 14px;
     }
 
@@ -625,10 +636,6 @@ main {
         display:none;
     }
 
-    #footer {
-        display:none;
-    }
-
 
     /*-------------CONTAINER GRID LAYOUT-------------*/
     #container {
@@ -637,7 +644,8 @@ main {
         grid-template-areas:
             "header"
             "navbar"
-            "main-div";
+            "main-div"
+            "footer";
         grid-gap: 3px;
     }
     
@@ -652,6 +660,10 @@ main {
 
     #navbar {
         grid-area: navbar;
+    }
+
+    #footer {
+        grid-area: footer;
     }
 
     #sidebar1 {
