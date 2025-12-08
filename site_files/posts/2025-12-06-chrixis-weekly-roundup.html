@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Sixtyfour:BLED,SCAN@0..100,-53..100&family=Tourney:ital,wdth,wght@0,75..125,100..900;1,75..125,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div class="post content">
+        <div id ="post-content" class="post">
             <h2 style="text-align:center;">chrixi's weekly round-up</h2>
             <br />
 
@@ -43,6 +43,14 @@
                     <p>While we're on the subject of textile mills, a new craft was revealed to me this week: passementerie, which is the art of creating tassels, edgings, cords, and other such trimmings for textiles. I found out about <a href="https://www.instagram.com/pkdickman/">Paul Dickman's Instgram</a>, who is some guy trying to revive a defunct passementerie mill in Chicago, and shares a ton of mesmerizing videos of the creation of these trimmings. I have never thought too much about the production of these items before, and the history of this craft as a trade is pretty interesting.</p>
                     <br />
                     <br />
+
+                <h4><a href="https://archive.is/YDBDz">The Medical Case for Self-Driving Cars</a></h4>
+                <span class="note">Jonathan Slotkin for <em>The New York Times</em>, 2 Dec 2025</span>
+                <br />
+
+                    <p></p>
+                    <br />
+                    <br />
                 
                 <h4><a href="https://archive.is/oKs4J">Gwyneth Paltrow on Kissing Chalamet, Fighting Harvey and Learning to "Not Give a Fuck"</a></h4>
                 <span class="note">Lacey Rose for <em>The Hollywood Reporter</em>, 3 Dec 2025</span>
@@ -61,9 +69,15 @@
                 <h4><a href="https://www.youtube.com/watch?v=m6z1sW_qtyg&list=PLN3HOJ-INNEKAox1k-Q6JFIKFLr1xs4s5">ROSALÍA - LUX</a></h4>
                 <br />
 
-                    <p>Simply amazing. There's so much about this album that I enjoy. The collaboration with the </p>
+                    <p>Simply amazing. There's so much about this album that I enjoy. The collaboration with the London Philharmonic</p>
                 
         </div>
     </body>
+
+    <script>
+        var postContent = document.getElementById("post-content").outerHTML; 
+        localStorage.setItem("latestPost", postContent);
+        localStorage.setItem("2025-12-06-chrixis-weekly-roundup.html", postName);
+    </script>
 
 </html>

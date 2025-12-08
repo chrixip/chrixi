@@ -41,8 +41,9 @@ let authorLink = "https://chrixi.neocities.org"; // Enter your website, social m
 /* If you already have an existing pre-RSS posts array that you'd like to preserve
    in your blog's archive, copy that array below. The RSS posts will be added to it later. */
 let postsArray = [
-  [ "posts/2025-11-24-test.html" ],
-  [ "posts/2020-11-10-Post-Template.html" ]
+  [ "/posts/2025-12-06-chrixis-weekly-roundup.html"],
+  [ "/posts/2025-11-24-test.html" ],
+  [ "/posts/2020-11-10-Post-Template.html" ]
 ];
 
 //==[ 2b. FETCH RSS ]==
@@ -337,3 +338,16 @@ function isMobile() {
         }
 
         window.onload = showMobileAlert;
+
+// This script loads the latest post into the "latest-post-div" div on the homepage. To make sure this is functional, update the postsArray var at the top of this file whenever you make a new post. Make sure to include the id "post-content" in the post to ensure it gets loaded here
+
+if(postsArray.length > 0) {
+  latestPost = postsArray[0][0];
+  latestPostPath = "." + latestPost;
+
+  if(document.getElementById("latest-post-div")) {
+    $(function() {
+      $("#latest-post-div").load(latestPostPath +" #post-content");
+    });
+  }
+}
