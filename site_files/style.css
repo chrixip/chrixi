@@ -400,11 +400,11 @@ main {
     gap: 0px;
 
     grid-template-areas:
-        'welcome player empty1 empty1'
-        'about player empty1 empty1'
-        'about post post post'
-        'subscribe post post post'
-        'empty post post post';
+        'welcome player empty1'
+        'about player empty1'
+        'about post post'
+        'subscribe post post'
+        'empty post post';
     
     align-content: center;
 }
@@ -431,6 +431,47 @@ main {
 
 #post {
     grid-area: post;
+}
+
+
+/*===============================================
+        ------ BLOG GRIDS ------
+================================================*/
+
+.report-card {
+    display: grid;
+    gap: 15px;
+
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-template-areas:
+        'plata cashew saffi'
+        'plata-img cashew-img saffi-img';
+}
+
+#plata {
+    grid-area: plata;
+}
+
+#plata-img {
+    grid-area: plata-img;
+}
+
+#cashew {
+    grid-area: cashew;
+}
+
+#cashew-img {
+    grid-area: cashew-img;
+}
+
+#saffi {
+    grid-area: saffi;
+}
+
+#saffi-img{
+    grid-area: saffi-img;
 }
 
 /*===============================================
@@ -598,15 +639,15 @@ main {
 ================================================*/
 
 /*-------------WEBAMP STYLING FOR SMALLER SCREENS-------------*/
-@media only screen and (max-width: 1462px) {
+@media only screen and (max-width: 1510px) {
     
     main {
         grid-template-rows: 100px auto;
         grid-template-areas:
-            'welcome post post post'
-            'about post post post'
-            'subscribe post post post'
-            'empty post post post'
+            'welcome'
+            'about'
+            'post'
+            'subscribe'
     }
     
     #empty1 {
