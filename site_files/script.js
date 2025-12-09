@@ -346,7 +346,7 @@ if(postsArray.length > 0) {
   latestPostPath = "." + latestPost;
 
   if(document.getElementById("latest-post-div")) {
-    $(function() {
+    $(document).ready(function() {
       $("#latest-post-div").load(latestPostPath +" #post-content");
     });
   }
