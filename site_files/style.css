@@ -411,6 +411,7 @@ main {
 /*-------------CONTAINER STYLES-------------*/
 #container {
     max-width: 2200px;
+    min-width: 1250px;
     height: 91vh;
     
     margin: 15px auto;
