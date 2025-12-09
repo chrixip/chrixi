@@ -373,8 +373,7 @@ hr {
     grid-template-areas:
         'sidebar-box-1'
         'sidebar-box-2'
-        'sidebar-box-3'
-        'sidebar-box-4';
+        'sidebar-box-3';
 }
 
 #sidebar-box-1 {
@@ -388,12 +387,6 @@ hr {
 #sidebar-box-3 {
     grid-area: sidebar-box-3;
 }
-
-#sidebar-box-4 {
-    grid-area: sidebar-box-4;
-}
-
-
 
 /*===============================================
         ------ MAIN GRID LAYOUT ------
