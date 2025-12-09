@@ -360,6 +360,42 @@ hr {
 }
 
 /*===============================================
+        ------ SIDEBAR GRID LAYOUT ------
+================================================*/
+
+#sidebar1-section {
+    display:grid;
+    
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    gap:0px;
+
+    grid-template-areas:
+        'sidebar-box-1'
+        'sidebar-box-2'
+        'sidebar-box-3'
+        'sidebar-box-4';
+}
+
+#sidebar-box-1 {
+    grid-area: sidebar-box-1;
+}
+
+#sidebar-box-2 {
+    grid-area: sidebar-box-2;
+}
+
+#sidebar-box-3 {
+    grid-area: sidebar-box-3;
+}
+
+#sidebar-box-4 {
+    grid-area: sidebar-box-4;
+}
+
+
+
+/*===============================================
         ------ MAIN GRID LAYOUT ------
 ================================================*/
 
@@ -411,7 +447,6 @@ main {
 /*-------------CONTAINER STYLES-------------*/
 #container {
     max-width: 2200px;
-    min-width: 1250px;
     height: 91vh;
     
     margin: 15px auto;
@@ -640,6 +675,10 @@ main {
 
     #header {
         height: 50px;
+    }
+
+    #header img{
+        display:none;
     }
 
     #header-divider {
