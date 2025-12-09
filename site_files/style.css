@@ -400,11 +400,12 @@ main {
     gap: 0px;
 
     grid-template-areas:
-        'welcome player empty1'
-        'about player empty1'
+        'welcome player .'
+        'about player .'
         'about post post'
         'subscribe post post'
-        'empty post post';
+        'empty post post'
+        '. post post';
     
     align-content: center;
 }
@@ -567,6 +568,10 @@ main {
     background-image: var(--about-divider-img);
 }
 
+#subscribe {
+    z-index: 3;
+}
+
 #subscribe hr {
     height: 35px;
     
@@ -575,6 +580,17 @@ main {
     background-position-x: center;
 
     border: none;
+}
+
+#empty {
+    position:relative;
+    
+    max-width: 0px;
+    max-height: 0px;
+}
+
+#empty img {
+    z-index: 2;
 }
 
 #webdeck-player {
