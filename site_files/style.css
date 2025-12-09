@@ -6,10 +6,10 @@
     /* Assets */
     --background-img: url("assets/backgrounds/crawling.gif");
     
+    --header-img: url("assets/header images/chrixi is online redux.gif");
     --container-bg-img: url("assets/backgrounds/stars.gif");
     --div-bg-img: url("assets/backgrounds/old-mathematics.png");
 
-    --header-img: url("assets/header images/chrixi is online redux.gif");
     --header-divider-img: url("assets/dividers/cityskyline.png");
     --footer-divider-img: url("assets/dividers/train_divider.gif");
 
@@ -470,8 +470,6 @@ main {
     text-align: center;
 
     background-image: var(--header-img);
-    background-position: center center;
-    background-repeat: no-repeat;
 }
 
 #header-divider {
@@ -626,6 +624,20 @@ main {
     }
 }
 
+@media only screen and (max-width: 1310px) {
+    
+    #header img{
+        display:none;
+    }
+
+    #header {
+        background-image: var(--header-img);
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+}
+
 
 /*-------------MEDIA QUERY FOR SMALLER SCREENS-------------*/
 
@@ -673,13 +685,7 @@ main {
 
     /*-------------ID-SPECIFIC STYLES-------------*/
 
-    #header {
-        height: 50px;
-    }
-
-    #header img{
-        display:none;
-    }
+    
 
     #header-divider {
         display:none;
