@@ -1,0 +1,137 @@
+window.addEventListener("load", function(){
+    document.getElementById("chattable").contentWindow.postMessage(`
+      @font-face {
+    font-family:  "MSGothic";
+    src: url(/media/ms-gothic.ttf);
+}
+body {
+    font-family: MS Gothic, "MSGothic";
+    font-smooth: never;
+}
+#background, #settingsMenu {
+    background: url(/media/grid.png);
+    background-size: 100px 100px;
+    background-attachment: local;
+    background-repeat: repeat;
+}
+a  {
+    color: #88F;
+}
+#top_banner {
+    display:none;
+    font-family:  MS Gothic, "MSGothic";
+    font-weight: bolder !important;
+    background: #AAF;
+    background: linear-gradient(0deg, rgba(170,170,255,1) 0%, rgba(238,238,255,1) 50%, rgba(170,170,255,1) 100%);
+    width: calc(100% - 2px);
+    border: solid 1px #99E;
+    box-shadow: 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 1px #FFF, 0 3px 4px #005;
+    text-shadow: 1px 1px 2px #005;
+    position: relative;
+    z-index: -4;
+}
+.allMessages {
+    background-color: #FFF;
+
+    background-size: 100px 100px;
+    box-shadow: 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 3px 4px #005;
+    border: 1px solid #88F;
+    border-radius: 8px;
+    margin: 0 20px 0 20px;
+    position: relative;
+}
+.allMessages.containsOnlyEmojis .emoji {
+    height: 50px;
+}
+.msgWrapper:has(.pm) {
+    padding-top: 26px;
+}
+.allMessages.pm {
+    border-color: #F55;
+}
+.allMessages.pm:after {
+    content: "Private Message";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F55;
+    color: #FFF;
+    height: 16px;
+    padding: 5px;
+    position: absolute;
+    right: 5vw;
+    bottom: 100%;
+    z-index: 5;
+    border-radius: 5px 5px 0 0;
+}
+.msgWrapper + .msgWrapper {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+#timestamp {
+    font-size: 8pt;
+    margin-top: 10px !important;
+    padding-left: 30px;
+}
+#input, #nameEntry {
+    background-color: #FFF;
+    border-radius: 0;
+    border-top: 1px solid #AAF;
+    font-family:  MS Gothic, "MSGothic";
+}
+#name {
+    background-color: #FFF;
+    border-radius: 0;
+    border: solid 1px #88F;
+    padding: 2px;
+    font-family:  MS Gothic, "MSGothic";
+}
+#settings:hover {
+    filter: drop-shadow(0 0 3px #FFF) drop-shadow(0 0 3px #FFF) drop-shadow(0 0 3px #FFF);
+    transform: rotate(180deg);
+}
+#settings {
+    filter: drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF);
+    transition: all 250ms linear;
+}
+#emojiTrayToggle {
+    height: 15px;
+    width: 15px;
+    padding: 6px;
+    margin-top: 3px;
+    margin-left: 3px;
+    background-image: url(/media/pixel-emoji.webp) !important;
+    opacity: 0.5;
+}
+#is_typing {
+    filter: drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF);
+    background-color: #FFF;
+    border: solid 1px #AAF;
+    border-radius: 3px;
+    left: unset;
+    right: 10px;
+    bottom: 27px;
+    overflow: visible;
+}
+#is_typing:hover::after {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    content: "Someone is typing";
+    font-size: 10pt;
+    position: fixed;
+    right: 35px;
+    bottom: 0;
+    width: 50vw;
+    color: #000;
+    z-index: 100000;
+}
+#is_typing > span {
+    background-color: #AAF;
+    border-radius: 0;
+    height: 2px;
+    width: 2px;
+}
+
+    `, "*");
+  });

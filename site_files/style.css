@@ -315,6 +315,10 @@ hr {
 .post img {
     display: block;
     margin: auto;
+
+    border-width: 10px; 
+    border-style: solid;
+    border-image: url("./assets/static images/gilded-frame.png") 35 fill round;  
 }
 
 /*===============================================
