@@ -482,7 +482,7 @@ main {
 /*-------------CONTAINER STYLES-------------*/
 #container {
     max-width: 2200px;
-    height: 91vh;
+    height: 89vh;
     
     margin: 15px auto;
     padding: 20px;
@@ -667,6 +667,10 @@ main {
     }
     
     #empty1 {
+        display: none;
+    }
+
+    #empty {
         display: none;
     }
 
