@@ -314,7 +314,6 @@ hr {
 
 .post img {
     display: block;
-    margin: auto;
 
     border-width: 10px; 
     border-style: solid;
@@ -440,39 +439,40 @@ main {
 ================================================*/
 
 .report-card {
+    display: flex;
+    
+    flex-direction: row;
+    
+    gap: 10px;
+}
+    
+.pet {
     display: grid;
-    gap: 15px;
 
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr 1fr 1fr;
-
+    flex-basis: fit-content;
+    justify-content: space-between;
+    
     grid-template-areas:
-        'plata cashew saffi'
-        'plata-img cashew-img saffi-img';
+        'name'
+        'writeup'
+        'image';
+    grid-template-rows: 21px auto 270px;
+    
+    gap: 10px;
 }
 
-#plata {
-    grid-area: plata;
+.pet-name {
+    grid-area: name;
 }
 
-#plata-img {
-    grid-area: plata-img;
+.pet-writeup {
+    grid-area: writeup;
 }
 
-#cashew {
-    grid-area: cashew;
-}
+.pet-image {
+    grid-area: image;
 
-#cashew-img {
-    grid-area: cashew-img;
-}
-
-#saffi {
-    grid-area: saffi;
-}
-
-#saffi-img{
-    grid-area: saffi-img;
+    margin: auto;
 }
 
 /*===============================================
@@ -529,7 +529,7 @@ main {
 }
 
 /*-------------SIDEBAR STYLES-------------*/
-#sidebar-box-2 hr {
+.chat hr {
     margin-bottom: 10px;
     
     height: 40px;
@@ -655,15 +655,19 @@ main {
 ================================================*/
 
 /*-------------WEBAMP STYLING FOR SMALLER SCREENS-------------*/
+
 @media only screen and (max-width: 1510px) {
-    
+
     main {
         grid-template-rows: 100px auto;
         grid-template-areas:
             'welcome'
             'about'
+            'player'
             'post'
-            'subscribe'
+            'subscribe';
+        
+        overflow-x: hidden;
     }
     
     #empty1 {
@@ -673,10 +677,11 @@ main {
     #empty {
         display: none;
     }
-
+/*
     #webdeck-player {
         display: none;
     }
+        */
 }
 
 @media only screen and (max-width: 1310px) {
@@ -693,17 +698,15 @@ main {
 
 }
 
+@media only screen and (max-width: 1210px) {
 
-/*-------------MEDIA QUERY FOR SMALLER SCREENS-------------*/
-
-@media only screen and (max-width: 1250px) {
-    
     :root {
-        /* Assets */
+        /* Assets */ 
         --header-img: url("assets/header images/chrixi is online redux small.gif");
     }
 
     /*-------------TYPE-SPECIFIC STYLES-------------*/
+
     button {
         margin: auto;
     }
@@ -738,7 +741,124 @@ main {
             inset 0px -13px 6px -10px rgb(66 66 66 / 38%);
     }
 
-    /*-------------ID-SPECIFIC STYLES-------------*/
+    /*-------------CONTAINER GRID LAYOUT-------------*/
+    #container {
+        display: table;
+    }
+
+    .section {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #header {
+        height: 50px;
+        object-fit: contain;
+    }
+
+    #header-divider {
+        display: none;
+    }
+
+    #navbar {
+        border:none;
+        background: none;
+        margin-bottom: 5px;
+    }
+
+    #sidebar1 {
+        display:none;
+    }
+}
+
+@media only screen and (max-width: 746px) {
+    
+    #container {
+        display: table;
+    }
+
+    #navbar {
+        height: fit-content;
+    }
+
+    main {
+        grid-template-rows: 100px auto;
+        grid-template-areas:
+            'welcome'
+            'about'
+            'post'
+            'subscribe';
+    }
+
+    #empty {
+        display: none;
+    }
+
+    #webdeck-player {
+        display: none;
+    }
+
+    .report-card {
+        flex-direction: column;
+    }
+
+    .pet {
+        grid-template-areas:
+            'name .'
+            'image writeup';
+        grid-template-rows: 21px auto;
+
+        align-items: center;
+    }
+
+}
+
+/*-------------MEDIA QUERY FOR SMALLER SCREENS-------------*/
+
+/*
+@media only screen and (max-width: 1250px) {
+    
+    :root {
+        /* Assets 
+        --header-img: url("assets/header images/chrixi is online redux small.gif");
+    }
+
+    /*-------------TYPE-SPECIFIC STYLES-------------
+    button {
+        margin: auto;
+    }
+
+    p,
+    li {
+        font-size: 14px;
+    }
+
+    /*-------------GENERAL DIV SECTION STYLING-------------
+    .div-bg {
+        border: 3px ridge var(--div-border-color);
+        border-radius: 6px;
+    }
+
+    .section {
+        margin: 5px;
+    }
+
+    .content {
+        margin: 5px;
+        padding:10px;
+        
+        background: var(--content-bg-color);
+        
+        border: 1px solid darkgray;
+        border-radius: 2px;
+        box-shadow: 
+            inset 13px 0px 6px -10px rgb(66 66 66 / 20%), 
+            inset -13px 0px 6px -10px rgb(66 66 66 / 56%), 
+            inset 0px 13px 6px -10px #ffffff, 
+            inset 0px -13px 6px -10px rgb(66 66 66 / 38%);
+    }
+
+    /*-------------ID-SPECIFIC STYLES-------------
 
     
 
@@ -747,7 +867,7 @@ main {
     }
 
 
-    /*-------------CONTAINER GRID LAYOUT-------------*/
+    /*-------------CONTAINER GRID LAYOUT-------------
     #container {
         grid-template-rows: auto;
         grid-template-columns:100%;
@@ -780,7 +900,7 @@ main {
         display:none;
     }
 
-    /*-------------MAIN GRID LAYOUT-------------*/
+    /*-------------MAIN GRID LAYOUT-------------
     main {
         display:grid;
         
@@ -813,6 +933,7 @@ main {
     
 }
 
+*/
 /*===============================================
         ------SCROLLBARS STYLING------
 ================================================*/
