@@ -711,11 +711,6 @@ main {
         margin: auto;
     }
 
-    p,
-    li {
-        font-size: 14px;
-    }
-
     /*-------------GENERAL DIV SECTION STYLING-------------*/
     .div-bg {
         border: 3px ridge var(--div-border-color);
