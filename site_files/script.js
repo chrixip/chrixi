@@ -42,8 +42,9 @@ let authorLink = "https://chrixi.neocities.org"; // Enter your website, social m
    in your blog's archive, copy that array below. The RSS posts will be added to it later. */
 let postsArray = [
   [ "/posts/2025-12-06-chrixis-weekly-roundup.html"],
-  [ "/posts/2025-11-24-test.html" ],
-  [ "/posts/2020-11-10-Post-Template.html" ]
+  [ "/posts/2025-12-02-new-test-post.html"],
+  //[ "/posts/2025-11-24-test.html" ],
+  //[ "/posts/2020-11-10-Post-Template.html" ]
 ];
 
 //==[ 2b. FETCH RSS ]==
@@ -348,6 +349,35 @@ if(postsArray.length > 0) {
   if(document.getElementById("latest-post-div")) {
     $(document).ready(function() {
       $("#latest-post-div").load(latestPostPath +" #post-content");
+    });
+  }
+
+  if(document.getElementById("feed-posts")) {
+    $(document).ready(function() {
+      async function getPost (postPath) {
+        return $.get(postPath, function(html) {
+          console.log($(html).find("#post-content").text());
+        });
+      }
+
+      for(i = 0; i < postsArray.length; i++) {
+        post = postsArray[i][0];
+        postPath = "." + post;
+        console.log("post = " + postPath);
+
+        let container_start = '<div class="post content">'
+        let container_end = '</div><br />'
+
+        $.ajax({
+          type: "GET",
+          url: postPath,
+          async: false,
+          success: function(html) {a=$(html).find(".post");}
+        });
+        console.log(a.html());
+        a = container_start + a.html() + container_end;
+        $("#feed-posts").append(a);
+      }
     });
   }
 }

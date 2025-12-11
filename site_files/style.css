@@ -321,7 +321,7 @@ hr {
 }
 
 /*===============================================
-        ------ CONTAINER GRID LAYOUT ------
+    ------ CONTAINER GRID LAYOUT (HOME) ------
 ================================================*/
 
 #container {
@@ -388,7 +388,7 @@ hr {
 }
 
 /*===============================================
-        ------ MAIN GRID LAYOUT ------
+      ------ MAIN GRID LAYOUT (HOME) ------
 ================================================*/
 
 main {
@@ -433,6 +433,73 @@ main {
     grid-area: post;
 }
 
+/*===============================================
+    ------ CONTAINER GRID LAYOUT (FEED) ------
+================================================*/
+
+#container-feed {
+    display: grid;
+    
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto 5fr;
+    gap: 15px;
+    
+    grid-template-areas:
+        "header"
+        "header-divider"
+        "navbar"
+        "main";
+}
+
+#container-feed {
+    max-width: 2200px;
+    height: 89vh;
+    
+    margin: 15px auto;
+    padding: 20px;
+    
+    background-image: var(--container-bg-img);
+    
+    border: 9px ridge var(--container-border-color);
+    border-radius: 15px;
+}
+
+#header {
+    grid-area:header;
+}
+
+#header-divider {
+    grid-area:header-divider;
+}
+
+#navbar {
+    grid-area:navbar;
+}
+
+#main-div {
+    grid-area:main;
+}
+
+/*===============================================
+      ------ MAIN GRID LAYOUT (FEED) ------
+================================================*/
+
+#main-feed {
+    display:grid;
+    
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 0px;
+
+    grid-template-areas:
+        'post';
+    
+    align-content: center;
+}
+
+#feed-posts {
+    grid-area: post;
+}
 
 /*===============================================
         ------ BLOG GRIDS ------
@@ -801,127 +868,6 @@ main {
 
 }
 
-/*-------------MEDIA QUERY FOR SMALLER SCREENS-------------*/
-
-/*
-@media only screen and (max-width: 1250px) {
-    
-    :root {
-        /* Assets 
-        --header-img: url("assets/header images/chrixi is online redux small.gif");
-    }
-
-    /*-------------TYPE-SPECIFIC STYLES-------------
-    button {
-        margin: auto;
-    }
-
-    p,
-    li {
-        font-size: 14px;
-    }
-
-    /*-------------GENERAL DIV SECTION STYLING-------------
-    .div-bg {
-        border: 3px ridge var(--div-border-color);
-        border-radius: 6px;
-    }
-
-    .section {
-        margin: 5px;
-    }
-
-    .content {
-        margin: 5px;
-        padding:10px;
-        
-        background: var(--content-bg-color);
-        
-        border: 1px solid darkgray;
-        border-radius: 2px;
-        box-shadow: 
-            inset 13px 0px 6px -10px rgb(66 66 66 / 20%), 
-            inset -13px 0px 6px -10px rgb(66 66 66 / 56%), 
-            inset 0px 13px 6px -10px #ffffff, 
-            inset 0px -13px 6px -10px rgb(66 66 66 / 38%);
-    }
-
-    /*-------------ID-SPECIFIC STYLES-------------
-
-    
-
-    #header-divider {
-        display:none;
-    }
-
-
-    /*-------------CONTAINER GRID LAYOUT-------------
-    #container {
-        grid-template-rows: auto;
-        grid-template-columns:100%;
-        grid-template-areas:
-            "header"
-            "navbar"
-            "main-div"
-            "footer";
-        grid-gap: 3px;
-    }
-    
-    #header {
-        grid-area: header;
-        object-fit: contain;
-    }
-    
-    #main-div {
-        grid-area: main-div;
-    }
-
-    #navbar {
-        grid-area: navbar;
-    }
-
-    #footer {
-        grid-area: footer;
-    }
-
-    #sidebar1 {
-        display:none;
-    }
-
-    /*-------------MAIN GRID LAYOUT-------------
-    main {
-        display:grid;
-        
-        grid-template-columns: auto;
-        grid-template-rows: auto;
-        grid-template-areas:
-            'welcome'
-            'about'
-            'post'
-            'subscribe';
-        
-        align-content: center;
-    }
-
-    #welcome {
-        grid-area: welcome;
-    }
-
-    #about {
-        grid-area: about;
-    }
-
-    #post {
-        grid-area: post;
-    }
-
-    #subscribe {
-        grid-area: subscribe;
-    }
-    
-}
-
-*/
 /*===============================================
         ------SCROLLBARS STYLING------
 ================================================*/
